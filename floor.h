@@ -4,7 +4,7 @@
 #include "tile.h"
 
 // A Floor tile is one that any Entity can move onto (or be pushed onto)
-class Floor : public Tile {
+class Floor : public Tile { // Floor inherits Tile base class
 private:
   // copy constructor and assignment operator are disallowed
   Floor(const Floor &);
