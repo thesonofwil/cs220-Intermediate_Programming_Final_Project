@@ -12,7 +12,10 @@ class Position;
 class Maze {
 private:
   // TODO: add fields
-
+  int width;
+  int height;
+  Tile **maze; // the 2D representation of the maze
+  
   // disallow copy ctor and assignment operator
   Maze(const Maze &);
   Maze &operator=(const Maze &);
