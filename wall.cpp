@@ -11,7 +11,7 @@ Wall::~Wall(){
 }
 
 MoveResult Wall::checkMoveOnto(Entity *entity, const Position &fromPos, const Position &tilePos) const {
-  return MoveResult::Allow;
+  return MoveResult::block;
 }
 
 bool Wall::isGoal() const {
