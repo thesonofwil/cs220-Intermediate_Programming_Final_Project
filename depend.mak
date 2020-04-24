@@ -1,13 +1,13 @@
 build/maze.o: maze.cpp maze.h
 build/tile.o: tile.cpp tile.h
 build/floor.o: floor.cpp floor.h tile.h
-build/wall.o: wall.cpp
+build/wall.o: wall.cpp wall.h tile.h
 build/goal.o: goal.cpp goal.h tile.h
 build/mysterytile.o: mysterytile.cpp mysterytile.h tile.h
 build/tilefactory.o: tilefactory.cpp wall.h tile.h floor.h goal.h mysterytile.h \
  tilefactory.h
 build/game.o: game.cpp
-build/entity.o: entity.cpp
+build/entity.o: entity.cpp position.h
 build/entitycontroller.o: entitycontroller.cpp entitycontroller.h position.h
 build/astar.o: astar.cpp
 build/uicontrol.o: uicontrol.cpp
