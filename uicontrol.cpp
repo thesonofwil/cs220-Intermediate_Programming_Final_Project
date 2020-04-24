@@ -17,6 +17,6 @@ Direction UIControl::getMoveDirection(Game *game, Entity *entity){
 }
 
 //EntityController is controlled by use input
-bool UIControl::isUser(){
+bool UIControl::isUser() const{
   return true;
 }
