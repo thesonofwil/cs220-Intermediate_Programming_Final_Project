@@ -2,6 +2,7 @@
 // wtjoeng1
 
 #include "maze.h"
+#include <fstream>
 
 Maze::Maze(int width, int height) {
   this->width = width;
@@ -52,5 +53,30 @@ const Tile Msze::*getTile(const Position &pos) const {
 }
 
 // Read a description of a Maze from specified istream, and return it. 
-static Maze Maze::*read(std::ifstream &in) {
+static Maze Maze::*read(std::istream &in) {
+  int width;
+  int height;
+  in >> width; // Get first number
+  in >> height; // Get second number
+
+  Maze *maze = new Maze(width, height); // Create a new maze
+  
+  TileFactory tileFactory = TileFactory::getInstance(); // Get instance to call its member function
+  // Get chars for maze 
+  for (int i = 0; i < height; i++) {
+    for (int j = 0; j < width; j++) { 
+      char ch;
+      in >> ch;
+      Tile tile = tileFactory.TileFactory::createFromChar(ch); // Get tile
+
+      if (tile == nullptr) {
+	std::cerr << "Error: maze is not valid" << endl;
+	return nullptr;
+      }
+
+      // Populate the empty maze
+      maze[i][j] = tile;
+    }
+  }
+  return maze;
 }

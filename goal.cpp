@@ -11,7 +11,7 @@ Goal::~Goal(){
 
 //A goal tile is always allowed to access
 MoveResult Goal::checkMoveOnto(Entity *entity, const Position &fromPos, const Position &tilePos) const{
-  return MoveResult::Allow;
+  return MoveResult::ALLOW;
 }
 
 //A goal tile is the goal
