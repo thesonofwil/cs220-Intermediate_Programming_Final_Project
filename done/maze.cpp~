@@ -1,0 +1,31 @@
+// Wilson Tjoeng
+// wtjoeng1
+
+#include "maze.h"
+
+Maze::Maze(int width, int height) {
+  this->width = width;
+  this->height = height;
+}
+
+Maze::~Maze() {
+}
+
+int Maze::getWidth() const {
+  return this->width;
+}
+
+int Height::getHeight() const {
+  return this->height;
+}
+
+// Return true of the specified position is in bound
+// according to the Maze's width and height.
+bool inBounds(const Position &pos) const {
+  return pos.inBounds(this->width, this->height);
+}
+
+// Set a Tile at the specified Position. The Maze assumes responsibility
+// for deleting the Tile.
+void setTile(const Position &pos, Tile *tile) {
+}
