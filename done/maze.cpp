@@ -48,6 +48,7 @@ void Maze::setTile(const Position &pos, Tile *tile) {
 
 
 // Get the Tile at the specified Position.
+// Note: Floor and Wall is a Tile and may be returned. 
 const Tile Maze::*getTile(const Position &pos) const {
   return this->maze[pos.getX()][pos.getY()];
 }
@@ -67,7 +68,7 @@ static Maze Maze::*read(std::istream &in) {
     for (int j = 0; j < width; j++) { 
       char ch;
       in >> ch;
-      Tile tile = tileFactory.TileFactory::createFromChar(ch); // Get tile
+      Tile *tile = tileFactory.TileFactory::createFromChar(ch); // Get tile
 
       if (tile == nullptr) {
 	std::cerr << "Error: maze is not valid" << endl;
