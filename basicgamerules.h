@@ -19,6 +19,10 @@ public:
 
 private:
   // add your own private member functions...
+  virtual bool checkMoveResult(Game *game, const Position &source, const Position &dest) const;
+  virtual Direction getPushDirection(Entity *actor, Entity *obj);
+  virtual Position getPushPosition(Game *game, Direction dir, Entity *obj);
+  virtual bool checkObjCanBePushed(Game *game, Position &dest);
 };
 
 #endif // BASICGAMERULES_H
