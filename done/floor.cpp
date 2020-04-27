@@ -24,7 +24,7 @@ MoveResult Floor::checkMoveOnto(Entity *entity, const Position &fromPos, const P
   return MoveResult::ALLOW;
 }
 
-// A floor tile is nevver the goal
+// A floor tile is never the goal
 bool Floor::isGoal() const {
   return false;
 }
