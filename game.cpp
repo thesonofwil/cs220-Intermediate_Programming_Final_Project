@@ -91,9 +91,25 @@ GameRules Game::*getGameRules() {
 void Game::gameLoop() {
   GameResult status = GameResult::UNKNOWN;
 
+  // Continuously take turns until game over
   while (status == GameResult::UNKNOWN) {
     for (Entity *e : Game::EntityVec) {
-      takeTurn(e);
+      // If entity is controller, display the maze
+      EntityController *controller = e->getController();
+      if (e.isUser()) {
+	this->ui.render(this);
+      }
+      
+      takeTurn(e); // Enact turn
+
+      // Check if game over condition has been met
+      status = this->gameRules.checkGameResult(this);
+      if (status == GameResult::HERO_WINS) {
+	this->ui.displayMessage("Hero wins", true); // endgame = true
+	break; // Exit out of for and while loops
+      } else if (status == GameResult::HERO_LOSES) {
+	this->ui.displayMessage("Hero loses", true);
+      }
     }
   }
 }
@@ -103,4 +119,75 @@ void Game::gameLoop() {
 // unit tests. It is mainly intended to be called from
 // the gameLoop member function.
 void Game::takeTurn(Entity *actor) {
+  // Get move from controller 
+  EntityController *controller = actor->getController();
+  Direction dir = controller.getMoveDirection(this, actor);
+  Position dest = Position::displace(dir); // Get the potential new position
+
+  // Check if move is valid and execute it if it is
+  if (this->gameRules.allowMove(this, actor, actor.getPosition(), dest)) {
+    this->gameRules.enactMove(this, actor, dest);
+  } else {
+    if (controller.isUser()) { // Output error if user makes an illegal move
+      this->ui.displayMessage("Illegal Move"); // No need for second parameter, defaults to false
+    }
+  }
+}
+
+// Read initial Game data from the specified istream, and return
+// the resulting Game object.
+static Game Game::*loadGame(std::isstream &in) {
+  if (!in) { // Game data not valid
+    return nullptr;
+  }
+
+  // Get maze data 
+  Maze *maze = Maze::read(in);
+  setMaze(maze);
+
+  // isstream pointer now should be at descriptors
+  while (!in.eof()) { // Read until end of file
+    setEntity(in);
+  }
+}
+
+// Given the stream pointer is past the maze and reading the string below it,
+// extract each character that describes a new entity and create it.
+void Game::setEntity(std::isstream &in) {
+  if (!in) {
+    return nullptr;
+  }
+
+  // Get entity data
+  char glyph;
+  char controller;
+  char property;
+  int x;
+  int y;
+
+  in >> glyph;
+  in >> controller;
+  in >> property;
+  in >> x;
+  in >> y;
+
+  // Create new entity and set properties
+  Entity *e = new Entity();
+  e->setGlyph(getString(glyph));
+  e->setProperties(getString(property));
+  EntityControllerFactory *ecf = EntityControllerFactory::getInstance();
+  EntityController *control = ecf.EntityControllerFactory::createFromChar(controller);
+  e.setController(control);
+  Position pos = new Position(x, y);
+  e.setPosition(pos);
+
+  addEntity(e); // Add new entity to list
+}
+
+// Convert char to string
+// string class has a constructor with size of string as
+// first param and the text as the second parameter.
+std::string Game::getString(char ch) { 
+  std::string str(1, ch);
+  return str;
 }

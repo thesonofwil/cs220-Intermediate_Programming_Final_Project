@@ -89,6 +89,9 @@ public:
 
 private:
   // Add your private member functions here...
+  void setEntity(std::istream &in); // Create entity from loadGame 
+
+  std::string Game::getString(char ch); // Convert a char to a string
 };
 
 #endif // GAME_H
