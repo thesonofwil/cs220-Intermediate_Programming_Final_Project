@@ -62,7 +62,7 @@ static Maze Maze::*read(std::istream &in) {
 
   Maze *maze = new Maze(width, height); // Create a new maze
   
-  TileFactory tileFactory = TileFactory::getInstance(); // Get instance to call its member function
+  TileFactory *tileFactory = TileFactory::getInstance(); // Get instance to call its member function
   // Get chars for maze 
   for (int i = 0; i < height; i++) {
     for (int j = 0; j < width; j++) { 
