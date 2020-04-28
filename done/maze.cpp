@@ -19,9 +19,7 @@ Maze::~Maze() {
     delete[] maze[i];
   }
   delete[] maze;
-
-  // need to delete Tile? 
- }
+}
 
 int Maze::getWidth() const {
   return this->width;
