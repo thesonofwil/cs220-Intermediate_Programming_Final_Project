@@ -20,7 +20,10 @@ public:
 
 private:
   // TODO: add fields
-
+  Maze *maze;
+  UI *ui;
+  GameRules *gameRules;
+  
   // disallow copy constructor and assignment operator
   Game(const Game &);
   Game &operator=(const Game &);
