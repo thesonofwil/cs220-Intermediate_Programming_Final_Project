@@ -14,15 +14,15 @@
   // Set the glyph that will represent this Entity.
   // Should consist of a single character.
   void Entity::setGlyph(const std::string &glyph){
-	  return "@";
-	  "M:
+	  glyph.hero = "@";
+	  glyph.minator = "M"
   }
 
   // Set the properties of this Entity.  Each character in the
   // string represents a single property.
   void Entity::setProperties(const std::string &props){
-	  "h";
-	  "m";
+	  props. = "h";
+	  props. = "m";
   }
 
   // Get the glyph representing this Entity.
@@ -38,13 +38,17 @@
   // Return true if the Entity's properties contain the specified
   // character, false otherwise.
   bool Entity::hasProperty(char prop) const{
-	return true;
+	  if (prop == ) {
+		  return true;
+	  } else {
+		  return false;
+	  }
   }
 
   // Set this Entity's EntityController, which will determine how it moves.
   // The Entity assumes responsibility for deleting it.
   void Entity::setController(EntityController *controller){
-
+	  if (
   }
 
   // Get this Entity's EntityController.
@@ -56,8 +60,9 @@
 
   // Set this Entity's Position.
   void Entity::setPosition(const Position &pos){
-	  getX();
-	  getY();
+	 int x = pos.getX();
+	 int y = pos.getY();
+	 return *this;
   }
 
   // Return this Entity's Position.
