@@ -11,7 +11,7 @@ class EntityController;
 class Entity {
 private:
   // TODO: add fields
-
+	int x,y;
   // copy constructor and assignment operator are disallowed
   Entity(const Entity &);
   Entity &operator=(const Entity &);
