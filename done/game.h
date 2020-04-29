@@ -20,7 +20,10 @@ public:
 
 private:
   // TODO: add fields
-
+  Maze *maze;
+  UI *ui;
+  GameRules *gameRules;
+  
   // disallow copy constructor and assignment operator
   Game(const Game &);
   Game &operator=(const Game &);
@@ -86,6 +89,9 @@ public:
 
 private:
   // Add your private member functions here...
+  void setEntity(std::istream &in); // Create entity from loadGame 
+
+  std::string Game::getString(char ch); // Convert a char to a string
 };
 
 #endif // GAME_H

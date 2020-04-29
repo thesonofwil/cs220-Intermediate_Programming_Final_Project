@@ -3,8 +3,6 @@
 
 #include "basicgamerules.h"
 
-// A::B() to call a static function from another class
-
 BasicGameRules::BasicGameRules() {
 }
 
@@ -49,11 +47,37 @@ void BasicGameRules::enactMove(Game *game, Entity *actor, const Position &dest) 
 
 // Return the current game state.
 // If hero reaches Goal, return GameResult::HERO_WINS.
-// If minotour reaches hero, return GameRules::HERO_LOSES.
+// If minotour reaches hero, return GameResult::HERO_LOSES.
 // Otherwise return GameResult::UNKNOWN.
+// GameResult defined in gamerules.h
 GameResult checkGameResult(Game *game) const {
+  Maze *maze = game->getMaze();
+  std::vector<Entity *> heroes = game->getEntitiesWithProperty('h'); // Get vector of heroes. A game may have multiple heroes
+  std::vector<Entity *> minotaurs = game->getEntitiesWithProperty('m'); // Get vector of minotaurs.
+  // Get list of positions of minotaurs
+  std::vector<Position> minPositions;
+  if (!minotaurs.is_empty()) {
+    for (Entity* minotaur : minotaurs) {
+      minPositions.push_back(minotaur.getPosition());
+    }
+  }
   
-
+  for (Entity* hero : heroes) {
+    Position pos = hero.getPosition();
+    Tile *tile = maze.getTile(pos);
+    if (tile.isGoal()) {
+      return GameResult::HERO_WINS;
+    }
+    // Check if any minotaur is at the same position as hero
+    if (!minPositions,is_empty()) {
+      for (Position p : minPositions) {
+	if (p == pos) {
+	  return GameResult::HERO_LOSES;
+	}
+      }
+    }
+  }
+  return GameResult::UNKNOWN;
 }
 
 bool BasicGameRules::checkMoveResult(Game *game, const Position &source, const Position &dest) const {
