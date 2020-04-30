@@ -10,7 +10,7 @@ AStarChaseHero::~AStarChaseHero(){
 }
 
 Direction AStarChaseHero::getMoveDirection(Game *game, Entity *entity) {
-  return Direction::UP;
+//  return Direction::UP;
 }
 
 bool AStarChaseHero::isUser() const {
