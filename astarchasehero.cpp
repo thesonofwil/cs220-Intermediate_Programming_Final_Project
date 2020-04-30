@@ -1,7 +1,7 @@
 //Brhea D'Mello
 //bdmello2
 
-#include "AStarChaseHero.h"
+#include "astarchasehero.h"
 
 AStarChaseHero ::AStarChaseHero(){
 }
