@@ -177,7 +177,7 @@ void Game::setEntity(std::istream &in) {
   // Get entity data
   char glyph;
   char controller;
-  string property;
+  std::string property;
   int x;
   int y;
 
