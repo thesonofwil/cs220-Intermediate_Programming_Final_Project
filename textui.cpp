@@ -7,6 +7,7 @@
 using namespace std;
 
 TextUI::TextUI(){
+  std::string this->message = "";
 }
 
 TextUI::~TextUI(){
