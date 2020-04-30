@@ -4,8 +4,9 @@
   #include <string>
   #include "entity.h"
 
-
-  Entity::Entity() {
+  Entity::Entity(int x, int y) {
+	this->x = x;
+	this->y = y;
   }
   
   Entity::~Entity() {
@@ -21,8 +22,8 @@
   // Set the properties of this Entity.  Each character in the
   // string represents a single property.
   void Entity::setProperties(const std::string &props){
-	  props. = "h";
-	  props. = "m";
+	  std::string<Entity *> heroes = "h";
+	  std::string<Entity *> minotaur = "m";
   }
 
   // Get the glyph representing this Entity.
