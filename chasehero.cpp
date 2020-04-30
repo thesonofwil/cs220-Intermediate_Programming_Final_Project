@@ -12,22 +12,23 @@ ChaseHero::~ChaseHero{
 
 Direction ChaseHero::getMoveDirection(Game *game, Entity *entity){
   std::vector<Entity *> heroes = game->getEntitiesWithProperty('h');
-  Position posminotaur = entity ->getPosition();
-  Entity *curr = heroes[0];
-  Position poshero = curr->getPosition();
-  int distance = poshero.distanceFrom(posminotaur);
-  for (int i = 0; i < heroes.size(); i++){
-    curr = heroes[i];
-    poshero = curr->getPosition();
+  if(heroes.empty()){
+    return Direction::NONE;
+  }
+  Position posminotaur = entity->getPosition();
+  std::vector<Entity *>::iterator iter;
+  for (iter = heroes.begin(); iter != heroes.end(); iter++){
+    Position poshero = *iter->getPosition();
     int distance2 = poshero.distanceFrom(posminotaur);
+    int distance = distance2;
     Position nearest;
     if (distance2 > distance){
       distance = distance2;
       nearest = poshero;
     }
   }
-  int horizontal = poshero.getX()-posminotaur.getX();
-  int vertical = poshero.getY()-posminotaur.getY();
+  int horizontal = nearest.getX()-posminotaur.getX();
+  int vertical = nearest.getY()-posminotaur.getY();
   if(vertical = 0){
     if(horizontal<0){
       return Direction::LEFT;
