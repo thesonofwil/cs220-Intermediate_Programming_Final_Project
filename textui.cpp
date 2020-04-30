@@ -7,6 +7,7 @@
 using namespace std;
 
 TextUI::TextUI(){
+  std::string this->message = "";
 }
 
 TextUI::~TextUI(){
@@ -33,11 +34,8 @@ Direction TextUI::getMoveDirection(){
   return Direction::NONE;
 }
 
-void TextUI::displayMessage(const std::string &msg, bool endgame){
+void TextUI::displayMessage(const std::string &msg, bool){
   this->message = msg;
-  if(this->message){
-    std::cout << this->message << std::endl;
-  }
 }
 
 void TextUI::render(Game *game){
@@ -48,8 +46,8 @@ void TextUI::render(Game *game){
     for (int j = 0; j < width; j++) { 
       //TO DO: need to check if it is entity or tile
       Position curr(j, i);
-      Entity* target;
-      if (target->getEntityAt(curr) == e){
+      Entity* target = game->getEntityAt(curr);
+      if (target != nullptr){
 	std::cout << target->getGlyph() << std::endl;
       } else {
 	Tile *tile = maze[i][j];
@@ -58,6 +56,9 @@ void TextUI::render(Game *game){
     }
     std::cout << "\n" << std::endl;
   }
-  TextUI::displayMessage();
+  if (this->message != ""){
+    std::cout << this->message << std::endl;
+    this->message = "";
+  }
   std::cout << ": " <<std::endl;
 }
