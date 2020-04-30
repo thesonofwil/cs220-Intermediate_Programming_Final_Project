@@ -46,8 +46,14 @@ void TextUI::render(Game *game){
   for (int i = 0; i < height; i++) {
     for (int j = 0; j < width; j++) { 
       //TO DO: need to check if it is entity or tile
-      Tile *tile = maze[i][j];
-      std::cout << tile->getGlyph() << std::endl;
+      Position curr(j, i);
+      Entity* target;
+      if (target->getEntityAt(curr) == e){
+	std::cout << target->getGlyph() << std::endl;
+      } else {
+	Tile *tile = maze[i][j];
+        std::cout << tile->getGlyph() << std::endl;
+      }
     }
     std::cout << "\n" << std::endl;
   }
