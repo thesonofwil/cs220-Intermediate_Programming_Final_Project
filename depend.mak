@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 build/maze.o: maze.cpp maze.h tile.h tilefactory.h position.h
 build/tile.o: tile.cpp tile.h
 build/floor.o: floor.cpp floor.h tile.h
@@ -37,4 +35,3 @@ build/mazetest.o: mazetest.cpp tctestpp.h position.h tile.h maze.h
 build/gametest.o: gametest.cpp tctestpp.h position.h tile.h maze.h entity.h \
  scriptedcontrol.h entitycontroller.h chasehero.h basicgamerules.h \
  gamerules.h game.h
->>>>>>> a4ce3f3e444cc37a58585c030cb44dfa82019d9e
