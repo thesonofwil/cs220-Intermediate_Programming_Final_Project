@@ -15,7 +15,7 @@
   // Should consist of a single character.
   void Entity::setGlyph(const std::string &glyph){
 	  glyph.hero = "@";
-	  glyph.minator = "M"
+	  glyph.minotaur = "M"
   }
 
   // Set the properties of this Entity.  Each character in the
