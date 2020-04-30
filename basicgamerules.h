@@ -2,6 +2,7 @@
 #define BASICGAMERULES_H
 
 #include "gamerules.h"
+#include "position.h"
 
 class BasicGameRules : public GameRules {
 private:
@@ -19,10 +20,9 @@ public:
 
 private:
   // add your own private member functions...
-  virtual bool checkMoveResult(Game *game, const Position &source, const Position &dest) const;
-  virtual Direction getPushDirection(Entity *actor, Entity *obj);
-  virtual Position getPushPosition(Game *game, Direction dir, Entity *obj);
-  virtual bool checkObjCanBePushed(Game *game, Position &dest);
+  virtual Direction getPushDirection(Entity *actor, Entity *obj) const;
+  virtual Position getPushPosition(Game *game, Direction dir, Entity *obj) const;
+  virtual bool checkObjCanBePushed(Game *game, Entity *actor, const Position &dest) const;
 };
 
 #endif // BASICGAMERULES_H

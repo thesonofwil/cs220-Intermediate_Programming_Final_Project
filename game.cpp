@@ -2,19 +2,28 @@
 // wtjoeng1
 
 #include "game.h"
+#include "maze.h"
+#include "tile.h"
+#include "position.h"
+#include "entity.h"
+#include "entitycontroller.h"
+#include "ecfactory.h"
+#include "ui.h"
+#include "gamerules.h"
 
 Game::Game() {
   this->maze = nullptr;
   this->ui = nullptr;
   this->gameRules = nullptr;
+  this->entityVec = new Game::EntityVec(); 
 }
 
 Game::~Game() {
   delete this->maze;
   delete this->ui;
   delete this->gameRules;
-  for (int i = 0; i < Game::EntityVec.size(); i++) {
-    delete Game::EntityVec[i];
+  for (int i = 0; i < (int) this->entityVec->size(); i++) {
+    delete this->entityVec->at(i); 
   }
 }
 
@@ -39,16 +48,16 @@ void Game::setGameRules(GameRules *gameRules) {
 // Add an Entity to the sequence of entities. The Game object assumes
 // responsibility for deleting it.
 void Game::addEntity(Entity *entity) {
-  Game::EntityVec.push_back(entity);
+  this->entityVec->push_back(entity);
 }
 
 // Get the Entity at the specified Position. Return nullptr if
 // there is no Entity at the specified Position.
-Entity *getEntityAt(const Position &pos) {
+Entity* Game::getEntityAt(const Position &pos) {
   // Loop through list and find Entity with matching Position
-  for (Entity *e : Game::EntityVec) {
-     if (e.getPosition() == pos) {
-       return e;
+  for (int i = 0; i < (int) this->entityVec->size(); i++) {
+    if (this->entityVec->at(i)->getPosition() == pos) {
+      return this->entityVec->at(i);
      }
   }
    return nullptr;
@@ -57,7 +66,7 @@ Entity *getEntityAt(const Position &pos) {
 // Get a const reference to the Game object's internal vector
 // of pointers to Entity objects.
 const Game::EntityVec& Game::getEntities() const {
-  return Game::EntityVec&;
+  return *this->entityVec;
 }
 
 // Get a vector of pointers to Entity objects that have the
@@ -66,26 +75,26 @@ const Game::EntityVec& Game::getEntities() const {
 std::vector<Entity *> Game::getEntitiesWithProperty(char prop) const {
   std::vector<Entity *> entities;
 
-  for (Entity *e : Game::EntityVec) {
-    if e.hasProperty(prop) {
-	entities.push_back(e);
+  for (int i = 0; i < (int) this->entityVec->size(); i++) {
+    if (this->entityVec->at(i)->hasProperty(prop)) {
+	entities.push_back(this->entityVec->at(i));
       }
   }
   return entities;
 }
 
 // Get the Maze object.
-Maze Game::*getMaze() {
+Maze* Game::getMaze() {
   return this->maze;
 }
 
 // Get the UI object.
-UI Game::*getUI() {
+UI* Game::getUI() {
   return this->ui;
 }
 
 // Get the GameRules object.
-GameRules Game::*getGameRules() {
+GameRules* Game::getGameRules() {
   return this->gameRules;
 }
 
@@ -99,22 +108,22 @@ void Game::gameLoop() {
 
   // Continuously take turns until game over
   while (status == GameResult::UNKNOWN) {
-    for (Entity *e : Game::EntityVec) {
+    for (int i = 0; i < (int) this->entityVec->size(); i++) {
       // If entity is controller, display the maze
-      EntityController *controller = e->getController();
-      if (e.isUser()) {
-	this->ui.render(this);
+      EntityController *controller = this->entityVec->at(i)->getController();
+      if (controller->isUser()) {
+	this->ui->render(this);
       }
       
-      takeTurn(e); // Enact turn
+      takeTurn(this->entityVec->at(i)); // Enact turn
 
       // Check if game over condition has been met
-      status = this->gameRules.checkGameResult(this);
+      status = this->gameRules->checkGameResult(this);
       if (status == GameResult::HERO_WINS) {
-	this->ui.displayMessage("Hero wins", true); // endgame = true
+	this->ui->displayMessage("Hero wins", true); // endgame = true
 	break; // Exit out of for and while loops
       } else if (status == GameResult::HERO_LOSES) {
-	this->ui.displayMessage("Hero loses", true);
+	this->ui->displayMessage("Hero loses", true);
       }
     }
   }
@@ -127,42 +136,43 @@ void Game::gameLoop() {
 void Game::takeTurn(Entity *actor) {
   // Get move from controller 
   EntityController *controller = actor->getController();
-  Direction dir = controller.getMoveDirection(this, actor);
-  Position dest = Position::displace(dir); // Get the potential new position
+  Direction dir = controller->getMoveDirection(this, actor);
+  Position source = actor->getPosition();
+  Position dest = source.displace(dir); // Get the potential new position
 
   // Check if move is valid and execute it if it is
-  if (this->gameRules.allowMove(this, actor, actor.getPosition(), dest)) {
-    this->gameRules.enactMove(this, actor, dest);
+  if (this->gameRules->allowMove(this, actor, actor->getPosition(), dest)) {
+    this->gameRules->enactMove(this, actor, dest);
   } else {
-    if (controller.isUser()) { // Output error if user makes an illegal move
-      this->ui.displayMessage("Illegal Move"); // No need for second parameter, defaults to false
+    if (controller->isUser()) { // Output error if user makes an illegal move
+      this->ui->displayMessage("Illegal Move"); // No need for second parameter, defaults to false
     }
   }
 }
 
 // Read initial Game data from the specified istream, and return
 // the resulting Game object.
-static Game Game::*loadGame(std::isstream &in) {
+Game* Game::loadGame(std::istream &in) {
   if (!in) { // Game data not valid
     return nullptr;
   }
 
+  Game *game = new Game();
+  
   // Get maze data 
   Maze *maze = Maze::read(in);
-  setMaze(maze);
+  game->setMaze(maze);
 
   // isstream pointer now should be at descriptors
   while (!in.eof()) { // Read until end of file
-    setEntity(in);
+    game->setEntity(in);
   }
+  return game;
 }
 
 // Given the stream pointer is past the maze and reading the string below it,
 // extract each character that describes a new entity and create it.
-void Game::setEntity(std::isstream &in) {
-  if (!in) {
-    return nullptr;
-  }
+void Game::setEntity(std::istream &in) {
 
   // Get entity data
   char glyph;
@@ -182,10 +192,10 @@ void Game::setEntity(std::isstream &in) {
   e->setGlyph(getString(glyph));
   e->setProperties(getString(property));
   EntityControllerFactory *ecf = EntityControllerFactory::getInstance();
-  EntityController *control = ecf.EntityControllerFactory::createFromChar(controller);
-  e.setController(control);
-  Position pos = new Position(x, y);
-  e.setPosition(pos);
+  EntityController *control = ecf->createFromChar(controller);
+  e->setController(control);
+  Position pos(x, y); // Create new position
+  e->setPosition(pos);
 
   addEntity(e); // Add new entity to list
 }

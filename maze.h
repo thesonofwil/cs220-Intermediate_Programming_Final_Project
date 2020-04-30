@@ -44,6 +44,9 @@ public:
   // Read a description of a Maze from specified istream, and return it.
   static Maze *read(std::istream &in);
 
+private:
+  // Add your own private member functions
+
   // Convert a 2D index into 1D.
   int getIndex(int x, int y) const;
   
@@ -53,8 +56,6 @@ public:
   // Get the y coordinate given a 1D index.
   int getY(int i) const;
 
-private:
-  // Add your own private member functions
 };
 
 #endif

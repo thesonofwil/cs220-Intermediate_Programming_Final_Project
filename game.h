@@ -15,7 +15,7 @@ class GameRules;
 // the overall gameplay.
 class Game {
 public:
-  // Typedef to refer to a vector of pointers to Entity objects
+  // Typedef defines a new variable type we can use 
   typedef std::vector<Entity *> EntityVec;
 
 private:
@@ -23,6 +23,7 @@ private:
   Maze *maze;
   UI *ui;
   GameRules *gameRules;
+  EntityVec *entityVec;
   
   // disallow copy constructor and assignment operator
   Game(const Game &);
@@ -91,7 +92,7 @@ private:
   // Add your private member functions here...
   void setEntity(std::istream &in); // Create entity from loadGame 
 
-  std::string Game::getString(char ch); // Convert a char to a string
+  std::string getString(char ch); // Convert a char to a string
 };
 
 #endif // GAME_H

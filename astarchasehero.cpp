@@ -1,7 +1,7 @@
 //Brhea D'Mello
 //bdmello2
 
-#include "AStarChaseHero.h"
+#include "astarchasehero.h"
 
 AStarChaseHero ::AStarChaseHero(){
 }
@@ -10,7 +10,7 @@ AStarChaseHero::~AStarChaseHero(){
 }
 
 Direction AStarChaseHero::getMoveDirection(Game *game, Entity *entity) {
-  return Direction::UP;
+//  return Direction::UP;
 }
 
 bool AStarChaseHero::isUser() const {
