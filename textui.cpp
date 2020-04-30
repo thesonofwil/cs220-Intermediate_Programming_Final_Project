@@ -29,11 +29,12 @@ Direction TextUI::getMoveDirection(){
       return Direction::LEFT;
     case 'r':
       return Direction::RIGHT;
-  }    
+  }
+  return Direction::NONE;
 }
 
 void TextUI::displayMessage(const std::string &msg, bool endgame){
-  this->message = *msg;
+  this->message = msg;
   if(this->message){
     std::cout << this->message << std::endl;
   }
