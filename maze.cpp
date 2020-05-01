@@ -21,18 +21,21 @@ Maze::~Maze() {
   delete this->maze;
 }
 
-// Get the 1D index that corresponds to a given 2D index.
-int Maze::getIndex(int row, int col) const {
+// Convert a 2D position into its corresponding 1D index.
+int Maze::get1DPos(const Position &pos) const {
+  int row = pos.getY(); // y coordinate specifies current row
+  int col = pos.getX(); // x coordinate specifies current column
+
   return row * getWidth() + col;
 }
 
 // Get the x coordinate given a 1D index.
-int Maze::getX(int i) const {
+int Maze::getRow(int i) const {
   return i / getWidth();
 }
 
 // Get the y coordinate given a 1D index.
-int Maze::getY(int i) const {
+int Maze::getCol(int i) const {
   return i % getWidth();
 }
 
@@ -53,8 +56,8 @@ bool Maze::inBounds(const Position &pos) const {
 // Set a Tile at the specified Position. The Maze assumes responsibility
 // for deleting the Tile.
 void Maze::setTile(const Position &pos, Tile *tile) {
-  int i = getIndex(pos.getX(), pos.getY());
-
+  int i = get1DPos(pos);
+  
   // Since maze is a pointer to a vector of pointers,
   // Need to dereference to access index.
   this->maze->at(i) = tile;
@@ -63,37 +66,47 @@ void Maze::setTile(const Position &pos, Tile *tile) {
 // Get the Tile at the specified Position.
 // Note: Floor and Wall is a Tile and may be returned. 
 const Tile* Maze::getTile(const Position &pos) const {
-  int i = getIndex(pos.getY(), pos.getX()); // y - current row, x - current col
-
+  int i = get1DPos(pos); // y - current row, x - current col
+  
   return this->maze->at(i);
 }
 
 // Read a description of a Maze from specified istream, and return it. 
 Maze* Maze::read(std::istream &in) {
-  int width;
-  int height;
+  int width = 0;
+  int height = 0;
   in >> width; // Get first number
   in >> height; // Get second number
 
+  if (width == 0 || height == 0) {
+    std::cerr << "Error: invalid dimensions" << std::endl;
+    return nullptr;
+  }
+  
   Maze *maze = new Maze(width, height); // Create a new maze
   
   TileFactory *tileFactory = TileFactory::getInstance(); // Get instance to call its member function
   // Get chars for maze
-  for (int i = 0; i < height * width; i++) {
-    char ch;
-    in >> ch;
-
+  char ch;
+  int count = 0; // Keep track of number of chars
+  while (in >> ch) {
     Tile *tile = tileFactory->TileFactory::createFromChar(ch); // Get tile
     
-    if (tile == nullptr) {
+    if (tile == nullptr || count > width * height - 1) {
       std::cerr << "Error: maze is not valid" << std::endl;
       return nullptr;
     }
-    Position pos(maze->getX(i), maze->getY(i));
+    Position pos(maze->getRow(count), maze->getCol(count));
     
     // Populate the empty maze
-    maze->setTile(pos, tile);
+    maze->maze->at(count) = tile;
+    count++;
   }
 
+  if (count != width * height) { // Maze dimensions were incorrect
+    std::cerr << "Error: maze is not valid" << std::endl;
+    return nullptr;
+  }
+    
   return maze;
 }

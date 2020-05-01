@@ -47,14 +47,14 @@ public:
 private:
   // Add your own private member functions
 
-  // Convert a 2D index into 1D.
-  int getIndex(int x, int y) const;
+  // Convert a 2D position into its corresponding 1D index.
+  int get1DPos(const Position &pos) const;
   
   // Get the x coordinate given a 1D index.
-  int getX(int i) const;
+  int getRow(int i) const;
   
   // Get the y coordinate given a 1D index.
-  int getY(int i) const;
+  int getCol(int i) const;
 
 };
 
