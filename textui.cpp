@@ -2,12 +2,18 @@
 //jhuan146
 
 #include "textui.h"
+#include "game.h"
+#include "maze.h"
+#include "tile.h"
+#include "position.h"
+#include "entity.h"
+#include "ui.h"
 #include <iostream>
 
 using namespace std;
 
 TextUI::TextUI(){
-  std::string this->message = "";
+  this->message = "";
 }
 
 TextUI::~TextUI(){
@@ -50,7 +56,7 @@ void TextUI::render(Game *game){
       if (target != nullptr){
 	std::cout << target->getGlyph() << std::endl;
       } else {
-	Tile *tile = maze[i][j];
+	const Tile *tile = maze->getTile(curr);
         std::cout << tile->getGlyph() << std::endl;
       }
     }
