@@ -15,6 +15,6 @@ Direction UIControl::getMoveDirection(Game, Entity){
   return dir;
 }
 
-bool UIControl::isUser const{
+bool UIControl::isUser() const{
   return false;
 }
