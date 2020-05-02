@@ -86,23 +86,38 @@ Maze* Maze::read(std::istream &in) {
   Maze *maze = new Maze(width, height); // Create a new maze
   
   TileFactory *tileFactory = TileFactory::getInstance(); // Get instance to call its member function
-  // Get chars for maze
   char ch;
   int count = 0; // Keep track of number of chars
   while (in >> ch) {
     Tile *tile = tileFactory->TileFactory::createFromChar(ch); // Get tile
-    
-    if (tile == nullptr || count > width * height - 1) {
+
+    // Check if reached end of maze and is now reading entity descriptor
+    if (count >= width * height) {
+      char ch2, ch3;
+      in >> ch2;
+      in >> ch3;
+      if (ch != '#' && ch2 != '#' && ch3 != '#' && maze->maze->at(count - 1)->getGlyph() == "#") {
+	in.unget();
+	in.unget();
+	in.unget();
+	return nullptr; // Game will read entity descriptor
+      }
       std::cerr << "Error: maze is not valid" << std::endl;
+      return nullptr; // Else error - more tiles than stated area
+    }
+    
+    if ((tile == nullptr) && count < width * height) { // Invalid tile within maze
+      std::cerr << "Error: invalid tile" << std::endl;
       return nullptr;
     }
+    
     Position pos(maze->getRow(count), maze->getCol(count));
     
     // Populate the empty maze
     maze->maze->at(count) = tile;
     count++;
   }
-
+  
   if (count != width * height) { // Maze dimensions were incorrect
     std::cerr << "Error: maze is not valid" << std::endl;
     return nullptr;
