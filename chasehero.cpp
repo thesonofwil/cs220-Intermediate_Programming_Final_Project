@@ -6,7 +6,7 @@
 #include "entity.h"
 #include "game.h"
 #include "entitycontroller.h"
-#include "basicgamerules.h"
+#include "gamerules.h"
 #include <vector>
 #include <cstdlib>
 
@@ -39,10 +39,11 @@ Direction ChaseHero::getMoveDirection(Game *game, Entity *entity){
   //Decide direction to move towards a minotaur
   int horizontal = nearest.getX()-posminotaur.getX();
   int vertical = nearest.getY()-posminotaur.getY();
-  bool available1 = BasicGameRules::allowMove(game, entity, posminotaur, posminotaur.displace(Direction::UP));
-  bool available2 = BasicGameRules::allowMove(game, entity, posminotaur, posminotaur.displace(Direction::DOWN));
-  bool available3 = BasicGameRules::allowMove(game, entity, posminotaur, posminotaur.displace(Direction::LEFT));
-  bool available4 = BasicGameRules::allowMove(game, entity, posminotaur, posminotaur.displace(Direction::RIGHT));
+  GameRules* gamerules = game -> getGameRules();
+  bool available1 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::UP));
+  bool available2 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::DOWN));
+  bool available3 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::LEFT));
+  bool available4 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::RIGHT));
   if(abs(vertical)<abs(horizontal)){
     if(available3 && available4){
       if(horizontal<0){
