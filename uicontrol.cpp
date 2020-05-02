@@ -2,6 +2,7 @@
 //Jingyu Huang
 
 #include "uicontrol.h"
+#include "ui.h"
 
 UIControl::UIControl(){
 }
@@ -10,7 +11,7 @@ UIControl::~UIControl(){
 }
 
 //Get suggested move from UI object
-Direction UIControl::getMoveDirection(Game *game, Entity *entity){
+Direction UIControl::getMoveDirection(Game*, Entity*){
   UI *ui = UI::getInstance();
   Direction dir = ui->getMoveDirection();
   return dir;

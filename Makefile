@@ -23,10 +23,9 @@ TMAIN_OBJS = $(TMAIN_SRCS:%.cpp=build/%.o)
 GAME_SRCS = maze.cpp tile.cpp floor.cpp wall.cpp goal.cpp mysterytile.cpp tilefactory.cpp \
 	game.cpp \
 	entity.cpp entitycontroller.cpp \
-	astar.cpp \
 	uicontrol.cpp chasehero.cpp astarchasehero.cpp inanimate.cpp \
 	mysterycontroller.cpp ecfactory.cpp \
-	ui.cpp uicommon.cpp \
+	ui.cpp \
 	gamerules.cpp basicgamerules.cpp
 OBJS = $(GAME_SRCS:%.cpp=build/%.o)
 
@@ -48,14 +47,21 @@ minotaur : $(MAIN_OBJS) $(OBJS)
 #tminotaur : $(TMAIN_OBJS) $(OBJS)
 #	$(CXX) -o $@ $(TMAIN_OBJS) $(OBJS) -lncurses
 
-positiontest : build/positiontest.o build/tctestpp.o $(OBJS)
-	$(CXX) -o $@ build/positiontest.o build/tctestpp.o $(OBJS)
 
-tiletest : build/tiletest.o build/tctestpp.o $(OBJS)
-	$(CXX) -o $@ build/tiletest.o build/tctestpp.o $(OBJS)
+positiontest : build/positiontest.o build/tctestpp.o
+	$(CXX) -o $@ build/positiontest.o build/tctestpp.o
 
-mazetest : build/mazetest.o build/tctestpp.o $(OBJS)
-	$(CXX) -o $@ build/mazetest.o build/tctestpp.o $(OBJS)
+TILETEST_OBJS = build/tile.o build/wall.o build/floor.o build/goal.o build/mysterytile.o \
+	build/tilefactory.o build/entity.o
+
+tiletest : build/tiletest.o build/tctestpp.o $(TILETEST_OBJS)
+	$(CXX) -o $@ build/tiletest.o build/tctestpp.o $(TILETEST_OBJS)
+
+MAZETEST_OBJS = build/maze.o build/tile.o build/wall.o build/floor.o build/goal.o build/mysterytile.o \
+	build/tilefactory.o
+
+mazetest : build/mazetest.o build/tctestpp.o $(MAZETEST_OBJS)
+	$(CXX) -o $@ build/mazetest.o build/tctestpp.o $(MAZETEST_OBJS)
 
 gametest : build/gametest.o build/tctestpp.o build/scriptedcontrol.o $(OBJS)
 	$(CXX) -o $@ build/gametest.o build/tctestpp.o build/scriptedcontrol.o $(OBJS)

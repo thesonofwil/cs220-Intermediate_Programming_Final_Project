@@ -177,7 +177,7 @@ void Game::setEntity(std::istream &in) {
   // Get entity data
   char glyph;
   char controller;
-  char property;
+  std::string property;
   int x;
   int y;
 
@@ -190,7 +190,7 @@ void Game::setEntity(std::istream &in) {
   // Create new entity and set properties
   Entity *e = new Entity();
   e->setGlyph(getString(glyph));
-  e->setProperties(getString(property));
+  e->setProperties(property);
   EntityControllerFactory *ecf = EntityControllerFactory::getInstance();
   EntityController *control = ecf->createFromChar(controller);
   e->setController(control);

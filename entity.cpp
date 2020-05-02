@@ -1,11 +1,13 @@
-//Brhea D'Mello
-//bdmello2
+// Brhea D'Mello, Wilson Tjoeng
+// bdmello2, wtjoeng1
 
 #include <string>
 #include "entity.h"
+#include "entitycontroller.h"
+#include "position.h"
 
 Entity::Entity() {
-  controller = nullptr;
+  this->controller = nullptr;
 }
   
 Entity::~Entity() {
@@ -15,29 +17,36 @@ Entity::~Entity() {
 // Set the glyph that will represent this Entity.
 // Should consist of a single character.
 void Entity::setGlyph(const std::string &glyph){
-  this->glyph = glyph;
+  char ch = glyph[0]; // Game class passes a char converted to string
+  this->glyph = ch;
 }
 
-// Set the properties of this Entity.  Each character in the
-// string represents a single property.
+// Set the properties of this Entity. Each character in the
+// string represents a single property. "Any remaining character
+// in the entity descriptor are the entity's properties."
 void Entity::setProperties(const std::string &props){
   this->properties = props;
 }
 
 // Get the glyph representing this Entity.
-Entity::std::string getGlyph() const{
-  return this->glyph;
+std::string Entity::getGlyph() const{
+  std::string str(1, this->glyph); // Convert char to string
+  return str;
 }
 
 // Get the string containing this Entity's properties.
-Entitiy::std::string getProperties() const{
+std::string Entity::getProperties() const{
   return this->properties;
 }
 
 // Return true if the Entity's properties contain the specified
 // character, false otherwise.
 bool Entity::hasProperty(char prop) const{
-  return this->properties == prop; 
+  // Check if string contains the specified char
+  if (this->properties.find(prop) != std::string::npos) { 
+    return true;
+  }
+  return false;
 }
 
 // Set this Entity's EntityController, which will determine how it moves.

@@ -1,3 +1,9 @@
+#include <iostream>
+#include <fstream>
+#include "game.h"
+#include "textui.h"
+#include "basicgamerules.h"
+
 int main(int argc, char *argv[]) {
   const char *filename;
   if (argc < 2) {
