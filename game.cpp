@@ -55,7 +55,7 @@ void Game::addEntity(Entity *entity) {
 // there is no Entity at the specified Position.
 Entity* Game::getEntityAt(const Position &pos) {
   // Loop through list and find Entity with matching Position
-  for (int i = (int) this->entityVec->size() - 1; i >= 0; i++) {
+  for (int i = 0; i < (int) this->entityVec->size(); i++) {
     if (this->entityVec->at(i)->getPosition() == pos) {
       return this->entityVec->at(i);
      }
