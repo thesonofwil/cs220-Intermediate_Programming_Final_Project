@@ -63,7 +63,7 @@ MAZETEST_OBJS = build/maze.o build/tile.o build/wall.o build/floor.o build/goal.
 mazetest : build/mazetest.o build/tctestpp.o $(MAZETEST_OBJS)
 	$(CXX) -o $@ build/mazetest.o build/tctestpp.o $(MAZETEST_OBJS)
 
-gametest : build/gametest.o build/tctestpp.o build/scriptedcontrol.o $(OBJS)
+gametest : build/gametest.o build/tctestpp.o build/scriptedcontrol.o build/textui.o$(OBJS)
 	$(CXX) -o $@ build/gametest.o build/tctestpp.o build/scriptedcontrol.o $(OBJS)
 
 clean :
