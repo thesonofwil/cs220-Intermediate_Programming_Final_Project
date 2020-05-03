@@ -25,12 +25,13 @@ Direction ChaseHero::getMoveDirection(Game *game, Entity *entity){
   }
   //Find closest hero from the minotaur
   Position posminotaur = entity->getPosition();
-  Position nearest;
+  Position poshero = (*heroes.begin()) -> getPosition();
+  int distance = poshero.distanceFrom(posminotaur);
+  Position nearest = poshero;
   std::vector<Entity *>::iterator iter;
   for (iter = heroes.begin(); iter != heroes.end(); iter++){
-    Position poshero = (*iter) -> getPosition();
+    poshero = (*iter) -> getPosition();
     int distance2 = poshero.distanceFrom(posminotaur);
-    int distance = distance2;
     if (distance2 > distance){
       distance = distance2;
       nearest = poshero;
