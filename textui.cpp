@@ -63,7 +63,7 @@ void TextUI::render(Game *game){
     std::cout << std::endl;
   }
   if (!(this->message).empty()){
-    std::cout << this->message << ": " << std::endl;
+    std::cout << this->message << std::endl;
     (this->message).erase();
   }
 }
