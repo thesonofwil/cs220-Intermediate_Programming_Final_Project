@@ -13,14 +13,13 @@
 using namespace std;
 
 TextUI::TextUI(){
-  this->message = "";
 }
 
 TextUI::~TextUI(){
 }
 
 Direction TextUI::getMoveDirection(){
-  std::cout << "Your move (u/d/l/r): " << std::endl;
+  std::cout << "Your move (u/d/l/r): ";
   std::string inputline;
   std::cin >> inputline;
   char input = inputline.at(0);
@@ -63,7 +62,7 @@ void TextUI::render(Game *game){
     }
     std::cout << std::endl;
   }
-  if (this->message != ""){
+  if (!(this->message).empty()){
     std::cout << this->message << ": " << std::endl;
     (this->message).erase();
   }

@@ -123,10 +123,12 @@ void Game::gameLoop() {
       if (status == GameResult::HERO_WINS) {
 	std::cout << "Win" << std::endl;
 	this->ui->displayMessage("Hero wins", true); // endgame = true
+        this->ui->render(this);
 	gameOver = true;
 	break; // Exit out of for and while loops
       } else if (status == GameResult::HERO_LOSES) {
 	this->ui->displayMessage("Hero loses", true);
+        this->ui->render(this);
 	gameOver = true;
 	break;
       }
