@@ -25,6 +25,7 @@ Game::~Game() {
   for (int i = 0; i < (int) this->entityVec->size(); i++) {
     delete this->entityVec->at(i); 
   }
+  delete this->entityVec;
 }
 
 // Set the Maze object. The Game object assumes responsibility for
@@ -60,7 +61,7 @@ Entity* Game::getEntityAt(const Position &pos) {
       return this->entityVec->at(i);
      }
   }
-   return nullptr;
+  return nullptr;
 }
 
 // Get a const reference to the Game object's internal vector
