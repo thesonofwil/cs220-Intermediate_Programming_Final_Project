@@ -3,7 +3,7 @@
  
 #include "astarchasehero.h"
  
- AStarChaseHero ::AStarChaseHero(){
+ AStarChaseHero::AStarChaseHero(){
  }
  
  AStarChaseHero::~AStarChaseHero(){
