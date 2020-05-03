@@ -45,36 +45,48 @@ Direction ChaseHero::getMoveDirection(Game *game, Entity *entity){
   bool available2 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::DOWN));
   bool available3 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::LEFT));
   bool available4 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::RIGHT));
-  if(abs(vertical)<abs(horizontal)){
-    if(available3 && available4){
-      if(horizontal<0){
+  //Cases where preferred move can be performed
+  if(abs(vertical)<=abs(horizontal)){
+    if(horizontal<0){
+      if(available3){	
         return Direction::LEFT;
-      }else{
-        return Direction::RIGHT;
       }
-    }
-    else if(available1 && available2){
-      if(vertical<0){
-        return Direction::UP;
-      }else{
-        return Direction::DOWN;
+    }else{
+      if(available4){
+        return Direction::RIGHT;
       }
     }
   }
   else{
-    if(available1 && available2){
-      if(vertical<0){
+    if(vertical<0){
+      if(available1){
         return Direction::UP;
-      }else{
+      }
+    }else{
+      if(available2){
         return Direction::DOWN;
       }
     }
-    else if(available3 && available4){
-      if(horizontal<0){
-        return Direction::LEFT;
-      }else{
-        return Direction::RIGHT;
-      }
+  }
+  //Cases where preferred move is invalid
+  if(vertical<0){
+    if(available1){
+      return Direction::UP;
+    }
+  }
+  if(vertical>0){
+    if(available2){
+      return Direction::DOWN;
+    }
+  }
+  if(horizontal<0){
+    if(available3){
+      return Direction::LEFT;
+    }
+  }
+  if(horizontal>0){
+    if(available4){
+      return Direction::RIGHT;
     }
   }
   return Direction::NONE;
