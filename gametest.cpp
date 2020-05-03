@@ -1,6 +1,6 @@
 // Note: uncomment the following #define if you would like to use
 // the test(s) for the TextUI class
-//#define USE_TEXTUI_TESTS
+#define USE_TEXTUI_TESTS
 
 // If you do define USE_TEXTUI_TESTS, then you will need to make the
 // following (minor) changes to your project:
@@ -98,7 +98,7 @@ TestObjs *setup() {
   TextUI *t_ui = new TextUI();
   objs->game1->setUI(t_ui);
 #endif // USE_TEXTUI_TESTS
-  objs->game3 = readGameData(g3_data); // Exception thrown here
+  objs->game3 = readGameData(g3_data); 
   objs->game3->setUI(nullptr);
   objs->game3->setGameRules(new BasicGameRules());
 
@@ -177,15 +177,10 @@ int main(int argc, char *argv[]) {
     tctest_testname_to_execute = argv[1];
   }
 
-  //cout << "1" << endl;
   TEST(testGetEntitiesWithProperty);
-  //cout << "2" << endl;
   TEST(testTakeTurn);
-  //cout << "3" << endl;
   TEST(testGetEntityAt);
-  //cout << "4" << endl;
   TEST(testLoadGame);
-  //cout << "5" << endl;
   TEST(testChaseHero1);
 #ifdef USE_TEXTUI_TESTS
   TEST(testTextUIRender);
@@ -238,10 +233,8 @@ void testTakeTurn(TestObjs *objs) {
   ASSERT(Position(1, 3) == hero->getPosition());
   ASSERT(gameRules1->checkGameResult(game1) == GameResult::UNKNOWN); 
 
-  cout << "Take turn" << endl;
   // play the sequence of scripted moves
-  game1->takeTurn(hero); // Seg Fault Here
-  cout << " Turn 1 " << endl;
+  game1->takeTurn(hero); 
   ASSERT(Position(1, 4) == hero->getPosition());
   ASSERT(gameRules1->checkGameResult(game1) == GameResult::UNKNOWN);
   game1->takeTurn(hero);
