@@ -121,6 +121,7 @@ void Game::gameLoop() {
       // Check if game over condition has been met
       GameResult status = this->gameRules->checkGameResult(this);
       if (status == GameResult::HERO_WINS) {
+	std::cout << "Win" << std::endl;
 	this->ui->displayMessage("Hero wins", true); // endgame = true
 	gameOver = true;
 	break; // Exit out of for and while loops
