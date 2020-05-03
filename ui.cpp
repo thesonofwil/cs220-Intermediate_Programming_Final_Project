@@ -5,7 +5,7 @@ UI *UI::s_instance;
 
 UI::UI() {
   // there can be only one instance of UI
-  assert(s_instance == nullptr);
+  //assert(s_instance == nullptr);
   s_instance = this;
 }
 

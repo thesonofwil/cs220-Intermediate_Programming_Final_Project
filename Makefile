@@ -31,14 +31,14 @@ OBJS = $(GAME_SRCS:%.cpp=build/%.o)
 
 # Source files needed only for test programs.
 TEST_SRCS = tctestpp.cpp scriptedcontrol.cpp \
-	positiontest.cpp tiletest.cpp mazetest.cpp gametest.cpp
+	positiontest.cpp tiletest.cpp mazetest.cpp entitytest.cpp gametest.cpp
 TEST_OBJS = $(TEST_SRCS:%.cpp=build/%.o)
 
 build/%.o : %.cpp
 	@mkdir -p build
 	$(CXX) $(CXXFLAGS) -c $*.cpp -o build/$*.o
 
-all : minotaur positiontest tiletest mazetest gametest
+all : minotaur positiontest tiletest mazetest entitytest gametest
 
 minotaur : $(MAIN_OBJS) $(OBJS)
 	$(CXX) -o $@ $(MAIN_OBJS) $(OBJS)
@@ -63,11 +63,14 @@ MAZETEST_OBJS = build/maze.o build/tile.o build/wall.o build/floor.o build/goal.
 mazetest : build/mazetest.o build/tctestpp.o $(MAZETEST_OBJS)
 	$(CXX) -o $@ build/mazetest.o build/tctestpp.o $(MAZETEST_OBJS)
 
-gametest : build/gametest.o build/tctestpp.o build/scriptedcontrol.o $(OBJS)
-	$(CXX) -o $@ build/gametest.o build/tctestpp.o build/scriptedcontrol.o $(OBJS)
+entitytest : build/entitytest.o build/tctestpp.o
+	$(CXX) -o $@ build/entitytest.o build/tctestpp.o
+
+gametest : build/gametest.o build/tctestpp.o build/scriptedcontrol.o build/textui.o $(OBJS)
+	$(CXX) -o $@ build/gametest.o build/tctestpp.o build/scriptedcontrol.o build/textui.o $(OBJS)
 
 clean :
-	rm -f minotaur tminotaur positiontest tiletest mazetest gametest
+	rm -f minotaur tminotaur positiontest tiletest mazetest entitytest gametest
 	rm -rf build
 
 # Running the command "make depend" will automatically generate correct
