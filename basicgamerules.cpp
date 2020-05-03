@@ -128,7 +128,9 @@ Position BasicGameRules::getPushPosition(Game *game, Direction dir, Entity *obj)
 
 bool BasicGameRules::checkObjCanBePushed(Game *game, Entity *actor, const Position &dest) const {
   Entity *object = game->getEntityAt(dest);
-  if (object->hasProperty('v')) { // v denotes moveable entity
+  if (object == nullptr) { // No entity at destination tile
+    return true;
+  } else if (object->hasProperty('v')) { // v denotes moveable entity
 
     // Check if moveable object can be moved further
     Direction dir = getPushDirection(actor, object);
