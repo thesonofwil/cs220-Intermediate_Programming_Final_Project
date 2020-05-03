@@ -50,20 +50,19 @@ void TextUI::render(Game *game){
   int height = maze->getHeight();
   for (int i = 0; i < height; i++) {
     for (int j = 0; j < width; j++) { 
-      //TO DO: need to check if it is entity or tile
       Position curr(j, i);
       Entity* target = game->getEntityAt(curr);
       if (target != nullptr){
-	std::cout << target->getGlyph() << std::endl;
+	    std::cout << target->getGlyph();
       } else {
-	const Tile *tile = maze->getTile(curr);
-        std::cout << tile->getGlyph() << std::endl;
+	    const Tile *tile = maze->getTile(curr);
+        std::cout << tile->getGlyph();
       }
     }
-    std::cout << "\n" << std::endl;
+    std::cout << std::endl;
   }
   if (this->message != ""){
-    std::cout << this->message << std::endl;
+    std::cout << this->message;
     this->message = "";
   }
   std::cout << ": " <<std::endl;
