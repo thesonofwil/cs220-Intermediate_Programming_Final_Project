@@ -21,11 +21,13 @@ TextUI::~TextUI(){
 
 Direction TextUI::getMoveDirection(){
   std::cout << "Your move (u/d/l/r): " << std::endl;
-  char input;
-  std::cin >> input;
+  std::string inputline;
+  std::cin >> inputline;
+  char input = inputline.at(0);
   while((input!='u') && (input!='d') && (input!='l') && (input!='r')){
     std::cout << "Unknown direction" <<	std::endl;
-    std::cin >> input;
+    std::cin >> inputline;
+    input = inputline.at(0);
   }
   switch(input){
     case 'u':
@@ -62,8 +64,7 @@ void TextUI::render(Game *game){
     std::cout << std::endl;
   }
   if (this->message != ""){
-    std::cout << this->message;
-    this->message = "";
+    std::cout << this->message << ": " << std::endl;
+    (this->message).erase();
   }
-  std::cout << ": " <<std::endl;
 }
