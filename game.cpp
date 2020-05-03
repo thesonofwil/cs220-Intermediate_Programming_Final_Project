@@ -105,10 +105,10 @@ GameRules* Game::getGameRules() {
 // an Entity whose EntityController is controlled by the user takes
 // a turn.
 void Game::gameLoop() {
-  GameResult status = GameResult::UNKNOWN;
-
+  bool gameOver = false;
+  
   // Continuously take turns until game over
-  while (status == GameResult::UNKNOWN) {
+  while (!gameOver) {
     for (int i = 0; i < (int) this->entityVec->size(); i++) {
       // If entity is controller, display the maze
       EntityController *controller = this->entityVec->at(i)->getController();
@@ -119,12 +119,15 @@ void Game::gameLoop() {
       takeTurn(this->entityVec->at(i)); // Enact turn
 
       // Check if game over condition has been met
-      status = this->gameRules->checkGameResult(this);
+      GameResult status = this->gameRules->checkGameResult(this);
       if (status == GameResult::HERO_WINS) {
 	this->ui->displayMessage("Hero wins", true); // endgame = true
+	gameOver = true;
 	break; // Exit out of for and while loops
       } else if (status == GameResult::HERO_LOSES) {
 	this->ui->displayMessage("Hero loses", true);
+	gameOver = true;
+	break;
       }
     }
   }
