@@ -157,7 +157,7 @@ void Game::takeTurn(Entity *actor) {
     this->gameRules->enactMove(this, actor, dest);
   } else {
     if (controller->isUser()) { // Output error if user makes an illegal move
-      this->ui->displayMessage("Illegal Move"); // No need for second parameter, defaults to false
+      this->ui->displayMessage("Illegal move"); // No need for second parameter, defaults to false
     }
   }
 }
