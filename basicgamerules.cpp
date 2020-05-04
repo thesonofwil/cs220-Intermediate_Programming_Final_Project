@@ -27,7 +27,6 @@ bool BasicGameRules::allowMove(Game *game, Entity *actor, const Position &source
   if (actor->hasProperty('v') || source.distanceFrom(dest) > 1 || !checkObjCanBePushed(game, actor, dest)) {
     return false;           
   }
-
   // Check if actor can move to dest tile.
   Maze *maze = game->getMaze();
   const Tile *tile = maze->getTile(dest); 
