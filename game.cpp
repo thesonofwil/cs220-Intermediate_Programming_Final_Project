@@ -56,7 +56,10 @@ void Game::addEntity(Entity *entity) {
 // there is no Entity at the specified Position.
 Entity* Game::getEntityAt(const Position &pos) {
   // Loop through list and find Entity with matching Position
-  for (int i = (int) this->entityVec->size() - 1; i>=0; i--) {
+  // Loop backwards to allow entities that were added later to 
+  // be displayed when occupied the same tile as another entity.
+  for (int i = (int) this->entityVec->size() - 1; i >= 0; i--) {
+    //for (int i = 0; i < (int) this->entityVec->size(); i++) { 
     if (this->entityVec->at(i)->getPosition() == pos) {
       return this->entityVec->at(i);
      }
@@ -173,9 +176,8 @@ Game* Game::loadGame(std::istream &in) {
   game->setMaze(maze);
 
   // isstream pointer now should be at descriptors
-  while (!in.eof()) { // Read until end of file
-    game->setEntity(in);
-  }
+  game->setEntity(in);
+  
   return game;
 }
 
@@ -190,23 +192,20 @@ void Game::setEntity(std::istream &in) {
   int x;
   int y;
 
-  in >> glyph;
-  in >> controller;
-  in >> property;
-  in >> x;
-  in >> y;
+  while (in >> glyph && in >> controller  &&  in >> property  &&  in >> x && in >> y) { 
+    
+    // Create new entity and set properties
+    Entity *e = new Entity();
+    e->setGlyph(getString(glyph));
+    e->setProperties(property);
+    EntityControllerFactory *ecf = EntityControllerFactory::getInstance();
+    EntityController *control = ecf->createFromChar(controller);
+    e->setController(control);
+    Position pos(x, y); // Create new position
+    e->setPosition(pos);
 
-  // Create new entity and set properties
-  Entity *e = new Entity();
-  e->setGlyph(getString(glyph));
-  e->setProperties(property);
-  EntityControllerFactory *ecf = EntityControllerFactory::getInstance();
-  EntityController *control = ecf->createFromChar(controller);
-  e->setController(control);
-  Position pos(x, y); // Create new position
-  e->setPosition(pos);
-
-  addEntity(e); // Add new entity to list
+    addEntity(e); // Add new entity to list
+  }
 }
 
 // Convert char to string

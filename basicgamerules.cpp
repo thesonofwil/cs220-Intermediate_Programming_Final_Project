@@ -44,18 +44,15 @@ bool BasicGameRules::allowMove(Game *game, Entity *actor, const Position &source
 void BasicGameRules::enactMove(Game *game, Entity *actor, const Position &dest) const {
 
   EntityController *controller = actor->getController();
-  
+    
   // Check if any pushable objects occupy the dest tile.
   if (controller->isUser()) { 
     std::vector<Entity *> objs = game->getEntitiesWithProperty('v');
-    for (int i = 0; i < (int) objs.size(); i++) {
-      if (objs[i]->getPosition() == dest) {
-	std::cout << "Current pos: " << objs[i]->getPosition() << std::endl;
-	Direction dir = getPushDirection(actor, objs[i]);
-	Position newPos = getPushPosition(game, dir, objs[i]);
-	std::cout << "New pos: " << newPos << std::endl;
-	objs[i]->setPosition(newPos);
-	std::cout << "Get pos: " << objs[i]->getPosition() << std::endl;
+    for (Entity* obj : objs) {
+      if (obj->getPosition() == dest) {
+      	Direction dir = getPushDirection(actor, obj);
+	Position newPos = getPushPosition(game, dir, obj);
+	obj->setPosition(newPos);
 	break; // Only one object at a tile at a time
       }
     }
@@ -107,9 +104,9 @@ Direction BasicGameRules::getPushDirection(Entity *actor, Entity *obj) const {
   int y = objPos.getY() - actorPos.getY();
   
   if (x == 0 && y == 1) {
-    return Direction::UP;
-  } else if (x == 0 && y == -1) {
     return Direction::DOWN;
+  } else if (x == 0 && y == -1) {
+    return Direction::UP;
   } else if (x == 1 && y == 0) {
     return Direction::RIGHT;
   } else if (x == -1 && y == 0) {
