@@ -1,0 +1,1042 @@
+commit 7f47b2a427d129272fd4ce45334a7ef960f8b7fb
+Merge: 4b093d0 821b19c
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon May 4 14:38:50 2020 -0400
+
+    merge
+
+commit 4b093d0c2dece7f922d15a8b660e1e5b1d233e93
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon May 4 14:38:33 2020 -0400
+
+    jhed added
+
+commit 821b19c17702ca46eac2e9934e42c15c390b408a
+Merge: e9e6ee1 ece8a57
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 11:42:21 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit e9e6ee10f32701acdd42557948373e385a701353
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 11:42:11 2020 -0400
+
+    Deleted comments
+
+commit ece8a5752d8f68beb6950ef15aa0b53324dd92ba
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 15:41:00 2020 +0000
+
+    .nfs000000000816a29100000033 edited online with Bitbucket
+
+commit dceade8fa074cfd7574844194d8807523256f73f
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 15:40:45 2020 +0000
+
+    .nfs000000000816987600000032 edited online with Bitbucket
+
+commit 43a6af345f57c9181abe0f1c45589ceb2cf73ea2
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 15:40:40 2020 +0000
+
+    .nfs00000000081694ec00000031 edited online with Bitbucket
+
+commit 77a8cfea241f5b0f91e212e090f0f51342133b4d
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 15:40:32 2020 +0000
+
+    .nfs000000000816844400000030 edited online with Bitbucket
+
+commit 7c25c23243e0c66903fe36bcff9ac3020c0dc104
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 15:40:25 2020 +0000
+
+    .nfs0000000001daf8c50000002f edited online with Bitbucket
+
+commit 023f7e3dfc09c7df2366bd151f8be94bf23835a4
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 15:40:18 2020 +0000
+
+    .nfs0000000001daede60000002e edited online with Bitbucket
+
+commit 4c804274c25a728124cdfb6b0c198901ebc48c0e
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 15:40:11 2020 +0000
+
+    .nfs0000000001daec840000002c edited online with Bitbucket
+
+commit 1d685e1411bcffe4c8c316a2d3b9fd24be3fe4bb
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 15:40:04 2020 +0000
+
+    .nfs0000000001dae9720000002d edited online with Bitbucket
+
+commit 216de9e21d1f2d186e5ebbb332554ce5e85be2f9
+Merge: a085d1f 632975a
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 11:39:23 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit a085d1ffd13054048b70837bb5cf713d03ee6985
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 11:38:51 2020 -0400
+
+    Fixed bug where istream cloned second entity
+
+commit 632975a1585bec3cad2262bb76264e2fd825ba60
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 23:02:07 2020 -0400
+
+    attempt to pass tests
+
+commit 11daf700ca9af040515182f56928e614f77538a5
+Merge: f4db157 08f5e77
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 21:48:29 2020 -0400
+
+    merge
+
+commit f4db157d5cfc7f7beadb830069e9ea8c97a47455
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 21:47:58 2020 -0400
+
+    attempt to solve glyph problem
+
+commit 08f5e77d0929c7d74883be38e3814f75b8425026
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 21:38:48 2020 -0400
+
+    Still working on it
+
+commit b8e8dfdbd2eed6b5d722d013c9655293c6d04939
+Merge: 470f75a 0dcecab
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 20:26:40 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 470f75a0b30a2491be01961d8c3156cd0d5f8e9f
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 20:26:25 2020 -0400
+
+    Fixed valgrind issues
+
+commit 0dcecab8c137a785598282e4f858ca1f6fc1eabd
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 20:21:51 2020 -0400
+
+    attempt to fix segmentation fault
+
+commit 981aebf7d8b290e66128312129dd2f8cf1982fe1
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 20:09:36 2020 -0400
+
+    glyph displayed fixed
+
+commit 526c6b35580e071237b5c9aa39d40a80c3129efd
+Merge: 52d34d0 834d6c9
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 19:48:58 2020 -0400
+
+    merge
+
+commit 52d34d0eb200b41006df9e1dc8759e2b2680e9ef
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 19:48:32 2020 -0400
+
+    printing message edited
+
+commit 834d6c91c546cd623477377e7661b1d38ba62a95
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 19:43:19 2020 -0400
+
+    took out debugging statement
+
+commit 6199f93f1f8c478f1323839327a0f8eb56869184
+Merge: 6225226 ff26fcd
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 19:39:18 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 62252264d4b825dfa29bfc186a978f1829157d99
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 19:39:09 2020 -0400
+
+    Minor updates
+
+commit ff26fcd56f914184a667e149f9513e5e4cd9c7f8
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 19:37:14 2020 -0400
+
+    message output problem fixed
+
+commit 6d255c40b18bfa0458daebd6283fdf56b49b4451
+Merge: 80f038a 959e347
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 19:03:27 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 80f038ac43e3a1a032ad9b056e23dd9e8a90ef8b
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 19:03:17 2020 -0400
+
+    Updated to display game over messages
+
+commit 959e347c363264c2cb387d1950167e3bc78b05cf
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 19:01:34 2020 -0400
+
+    render function implemented
+
+commit bc4493ad26cd04ceea3caad1d1845e3ecc8cedb5
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Sun May 3 22:53:10 2020 +0000
+
+    textui.cpp edited to pass test online with Bitbucket
+
+commit 972ee8932fae6ac359f4ccd1eb86fcc18d6eade1
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Sun May 3 22:30:59 2020 +0000
+
+    textui.cpp edited to pass tests online with Bitbucket
+
+commit 14b169be1fcf507f619c53757a746f1fe30bfa62
+Merge: a73fd31 b46d173
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 18:26:03 2020 -0400
+
+    Updated to test UIRender
+
+commit a73fd31ac0afc7437df053d81a38e8ede580f7bd
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 18:24:05 2020 -0400
+
+    Updated to test UIRender
+
+commit b46d173632b43baa711b0abde28d59af7952a4fb
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Sun May 3 22:15:59 2020 +0000
+
+    Makefile edited online with Bitbucket
+
+commit 5857c66ad689c6ebe1f534d5bf1608d872382e4d
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 16:47:50 2020 -0400
+
+    Fixed valgrind issue
+
+commit 74ec75e508d94736a90a4ea4c5ee80a1a9e174a4
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Sun May 3 15:46:20 2020 -0400
+
+    work on astarchasehero.cpp
+
+commit 7f80438201b8bb247388952fe2638b6c7f574e83
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 14:46:11 2020 -0400
+
+    getMoveDirection function edited to pass all tests
+
+commit b267e7cb145e3f13aacba6f5744ba681c5db9c0b
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun May 3 14:18:49 2020 -0400
+
+    chasehero.cpp edited to pass test
+
+commit 3eb44753b41820a8ef2995ff5667a81cd709c541
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 12:30:41 2020 -0400
+
+    Streamlined read function
+
+commit dba106bc37e37f54966df45b0e6219724edb243f
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun May 3 12:08:35 2020 -0400
+
+    Fixed bug where no entity was being returned
+
+commit fc38bd8bddb6489d1b56aafd2d3574a25c09d3b5
+Merge: 9a06d74 91980e9
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sat May 2 22:05:33 2020 -0400
+
+    merge
+
+commit 9a06d742dbfc31708b869d6a4b933e965647c278
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sat May 2 22:05:06 2020 -0400
+
+    merge
+
+commit 91980e9207abd487a910aaafa645f51fb2a0694d
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Sat May 2 20:58:07 2020 -0400
+
+    fix error
+
+commit 824d38538f75f04e4c9473b1277106baf922b7c1
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sat May 2 19:33:42 2020 -0400
+
+    compiler error fixed
+
+commit 6592b60040f558f357b6d3fc03c0d375848fb2ff
+Merge: 8f58b93 44f3c8c
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sat May 2 19:29:40 2020 -0400
+
+    merge
+
+commit 8f58b93e6af35370d29e886823d2c5fede017a57
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sat May 2 19:29:06 2020 -0400
+
+    merge
+
+commit 44f3c8c14293b5ab6bafd17eb97d3543bee229aa
+Merge: a6f86f2 4bb5283
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Sat May 2 23:27:26 2020 +0000
+
+    Merged in Jingyu-Huang/getmovedirection-in-chaseherocpp-edited--1588461995042 (pull request #1)
+    
+    getMoveDirection in chasehero.cpp edited online with Bitbucket
+
+commit 4bb5283c25ae45d86ff9b360d352fca55594377a
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Sat May 2 23:26:35 2020 +0000
+
+    getMoveDirection in chasehero.cpp edited online with Bitbucket
+
+commit a6f86f2e039c6eb65d6dfe000f2ca541e8a36ff3
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Sat May 2 19:24:18 2020 -0400
+
+    edit fix compiler
+
+commit 88ac73d350602904965a27802a6ab9f0964589db
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Sat May 2 17:39:26 2020 -0400
+
+    edit
+
+commit d3f0ab31f1d864100871914bd067cfd494e4b88b
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Sat May 2 13:03:04 2020 -0400
+
+    compiler errors fix
+
+commit 4641b1290351e8d48ebb0f7ca2ebd5799a3ddf4a
+Merge: d357239 700ddd2
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Sat May 2 12:56:37 2020 -0400
+
+    work on astarchasehero
+
+commit d357239223fb1ce5f8dc2d61d96d7c7076df500d
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Sat May 2 12:54:55 2020 -0400
+
+    work on astarchasehero
+
+commit 700ddd25428a337aeba4c8142a4181b9f38fc8f9
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Fri May 1 23:00:33 2020 -0400
+
+    Updated gametest
+
+commit 3657c1d530be23335b67927a243cade1b78c5716
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Fri May 1 22:41:05 2020 -0400
+
+    Updated to pass a few tests
+
+commit dbdf7824b6d7d2e1185f9ae5424e3629f6ecc6ef
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Fri May 1 22:31:59 2020 -0400
+
+    Updated to pass gametest
+
+commit e29a75f6eb0cfe44933fef1042f7460bca9a8889
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Fri May 1 19:14:07 2020 -0400
+
+    compilation error fixed
+
+commit 6bf232d7a136d8d61e4cd8d1044aea0552af57c1
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Fri May 1 19:12:36 2020 -0400
+
+    relevant header files included
+
+commit 6ac25833e7aed81f7cc43b541110762b6c8cee4f
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Fri May 1 19:00:33 2020 -0400
+
+    compilation errors fixed
+
+commit 9e2f2c099ae5f514910a19a2fbc697c9bb4959f1
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Fri May 1 17:18:20 2020 -0400
+
+    Updated mazetest from public repo
+
+commit 2c7ded0798a5e5643d3f5e98f8beae247c65fe23
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Fri May 1 17:17:56 2020 -0400
+
+    Rewrote to pass updated mazetest
+
+commit 53a646e29404b666b721dd80af39eb7970a51927
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Fri May 1 20:22:17 2020 +0000
+
+    uicontrol.cpp edited online with Bitbucket
+
+commit 1152b5fc9b6a5cc33c60a778a1dd1fcdb55fc521
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Fri May 1 13:24:24 2020 -0400
+
+    Updated with more tests
+
+commit 03ca576640e18c8255d877c62df6df26fe420aa1
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Fri May 1 12:58:38 2020 -0400
+
+    Updated these files from public repo
+
+commit 898f809fc0e337c075c4f4607d9d56d88ac1edb0
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Fri May 1 12:49:10 2020 -0400
+
+    Added positiontest
+
+commit e147a8e9fc82ca0d4a4d1eab23f61047a0c4de2a
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Fri May 1 00:08:00 2020 +0000
+
+    uicontrol.cpp edited online with Bitbucket
+
+commit e1f60c2cff1e00fe340e17164deab47d1e55a84c
+Merge: 8e4f436 d59fa34
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 20:06:12 2020 -0400
+
+    merge
+
+commit 8e4f436f3c7564dead698ade81bbaae7979a4285
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 20:05:46 2020 -0400
+
+    uicontrol files added
+
+commit d59fa341796acad8ad896efe1fb17a48272dc090
+Merge: 95357d3 8363e59
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 19:58:39 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 95357d3f780ad46454a4fd37c500fac453bd3fa4
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 19:58:31 2020 -0400
+
+    Fixed compiler issues
+
+commit 8363e5962add0766c8a672388e6c38e09b58e41d
+Merge: 335c5c9 8f7c1ad
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:56:03 2020 -0400
+
+    errors
+
+commit 335c5c9d7261e4625fa91ce7585db76e7857bb50
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:55:19 2020 -0400
+
+    getMoveDirection implemented
+
+commit 8f7c1ada1cbd8a3d1943164094319d9742ef7904
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 19:54:48 2020 -0400
+
+    Fixed merge errors
+
+commit daf4c9b5b1d7bf2f3fd05d93958f5bd954601f18
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 19:53:50 2020 -0400
+
+    Syntax fix
+
+commit 74355ae32de7d3c327171895c99738fb1c39fdde
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 19:52:34 2020 -0400
+
+    Reuploaded Goal
+
+commit ca10280047fa3bd424474426a26f142e342ec00e
+Merge: 9c4ffda 31011d9
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 19:39:53 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 9c4ffdaf56c6572ebf0d72391b0fbb0de0b3aacc
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 19:39:26 2020 -0400
+
+    Updated how loadGame extracts Entity properties
+
+commit 31011d95a170e58e6539cf8492e8ee06112d83f7
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:34:39 2020 -0400
+
+    looping direction changed for getEntityAt function
+
+commit 8306c608f58cf4545926b552970c01bb88dbccdd
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:31:03 2020 -0400
+
+    private field edited
+
+commit 34c47e73263e87c1768a968af8a8044df53becb3
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:30:08 2020 -0400
+
+    constructor edited
+
+commit 72fb744b24fa64f8629ab6b47b7de96c82fed562
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:29:02 2020 -0400
+
+    private field edited
+
+commit 564203286c44e1e2280f85d346de9bbe9f247ab1
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:28:22 2020 -0400
+
+    render function implemented
+
+commit 197efc887bd58441401da8fd446a78d1557d330f
+Merge: 090c6e1 a4ce3f3
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:04:19 2020 -0400
+
+    merge
+
+commit 090c6e1372f801b4a48f1933db86edd4463b9247
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 19:03:16 2020 -0400
+
+    merge
+
+commit a4ce3f3e444cc37a58585c030cb44dfa82019d9e
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Thu Apr 30 18:43:56 2020 -0400
+
+    fix astarchasehero
+
+commit e23f14f03cf3de4f128bbc887baddd720ecd08d0
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Thu Apr 30 18:42:14 2020 -0400
+
+    main
+
+commit 294c82a200b65c89c3b47c06a049a2d3ebc38efe
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 18:39:07 2020 -0400
+
+    Reuploaded Wall
+
+commit a66e0a154c8dac64737b30ec20f84f19cccc372e
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 18:35:29 2020 -0400
+
+    Reuploaded floor class
+
+commit aeedfd9eb071959386d5bdcbf6da2a5e2fba17c6
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 18:31:46 2020 -0400
+
+    Updated merge error
+
+commit d24a4b19e441b87c114582a6557bb41c1ed08b18
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 18:30:00 2020 -0400
+
+    Added entity
+
+commit 990b7b26d4e6cd9d022f6991f4c437171bca2950
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 18:18:51 2020 -0400
+
+    textui.cpp edited
+
+commit 29c3242d3686794efcda08003188f9fed37914c6
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 22:18:19 2020 +0000
+
+    .position.h.swp edited online with Bitbucket
+
+commit 347288599d83d1a8656a543879e162ba27fcc904
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 22:18:11 2020 +0000
+
+    .entity.cpp.swo edited online with Bitbucket
+
+commit cc04487e3d3e5ecc70d8bb03516a86d9c725719e
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 22:14:53 2020 +0000
+
+    entity.h edited online with Bitbucket
+
+commit 6f9d869803f229511ae5b33f04ea74805ee934d2
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Thu Apr 30 18:12:24 2020 -0400
+
+    edit entity
+
+commit 5c25b62088f626231ac04ccd5abefc1f591a19bb
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Thu Apr 30 18:09:45 2020 -0400
+
+    private field added
+
+commit 2a90f0fa38ccb8a286d3b7e890313278e4e24625
+Merge: aa58ff9 17bef4c
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Thu Apr 30 17:52:44 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit aa58ff907f55122ab3f637803f75ca97f9af7f1f
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Thu Apr 30 17:52:23 2020 -0400
+
+    edit
+
+commit 17bef4c66ee91bd2867989df6071da7e8ffa8ebb
+Merge: 814a92f 9a6f3c0
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 17:52:16 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 814a92fe6b325e516a8841d5ef79b29cbf39bb5d
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 17:50:18 2020 -0400
+
+    Added gametest
+
+commit 9a6f3c0e377623b4af52c40fb7721f283b610c90
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Thu Apr 30 16:33:35 2020 -0400
+
+    edit
+
+commit 4425161006e4379adb1669f5c572a8fdd0262b66
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 16:28:48 2020 -0400
+
+    Removed items
+
+commit ddc081f9baf65bb1e47e6831980fc62095a10aa4
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 16:27:46 2020 -0400
+
+    No more compiler issues
+
+commit 693f574a91ef57a8086106ba2ecbb0664cf58783
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 30 15:02:45 2020 -0400
+
+    No more compiler issues
+
+commit eb805a0b764f1fee736c3d2167e3d7b60545a52d
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Wed Apr 29 21:29:22 2020 -0400
+
+    Finished and passes given tests
+
+commit 66cc3b6d5090757639f7ca14f57f76a90c8ebc74
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed Apr 29 21:24:48 2020 -0400
+
+    render function implemented
+
+commit 0b6ad929444eda729225b4ca8abd7e6356d03652
+Merge: 93e24f4 87d3b4c
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed Apr 29 20:34:14 2020 -0400
+
+    edits made
+
+commit 93e24f43ac606639ea00ad4642508923c8ac6c36
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed Apr 29 20:33:10 2020 -0400
+
+    getMoveDirection function implemented
+
+commit 87d3b4cccac8b6206dae9d430bdfca8f86f82024
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Thu Apr 30 00:13:17 2020 +0000
+
+    textui.cpp edited online with Bitbucket
+
+commit 0f8d98df9cc5ea0eab174bcb7badd5dab6890963
+Merge: 06fbd4d 0540944
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Wed Apr 29 17:11:18 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 06fbd4da8ece6a273c46adb608689b052b3c4cee
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Wed Apr 29 17:10:43 2020 -0400
+
+    No more compiler issues
+
+commit 054094463485bf89232ab643ddac9409b5a40ebb
+Merge: 279a180 fa1160d
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Wed Apr 29 14:05:47 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 279a180105cda3481539bdbd4955e46b35b80220
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Wed Apr 29 14:05:27 2020 -0400
+
+    edit entity and astarchasehero
+
+commit fa1160d5be27003f6062a084d9e4ef52eea76f23
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Wed Apr 29 13:27:52 2020 -0400
+
+    Updated tiletest
+
+commit cb00eb2c8dbb486d1df3ea190c5356dfe7eee9f6
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Wed Apr 29 13:24:08 2020 -0400
+
+    Updated mazetest
+
+commit 2fd961c64970bbc8216fe71ee1376eee509935f5
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue Apr 28 22:24:35 2020 +0000
+
+    game.h edited online with Bitbucket
+
+commit 2e0a14056e4d911c732e8eab3071f393a65f91ea
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue Apr 28 22:24:24 2020 +0000
+
+    game.cpp edited online with Bitbucket
+
+commit ff28ac40079abdaf4561a7f856e2093daf6fa2e7
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue Apr 28 18:23:28 2020 -0400
+
+    Added Game
+
+commit 6f00cc0325856d9e38ec1a1ded05b70e79360a53
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue Apr 28 18:22:43 2020 -0400
+
+    Deleted unnecessary comments
+
+commit f1a82884b36246a1ed8883f3791aabacd4eb87dd
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue Apr 28 17:06:55 2020 -0400
+
+    Tentatively finished
+
+commit 80df85ab1a367da2b5e003076f69be9277d7e2ac
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue Apr 28 16:49:21 2020 -0400
+
+    Slight update to pointer syntax
+
+commit 5af4cee76cbd3519e6d347402fea332dc46c5c00
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue Apr 28 14:53:27 2020 -0400
+
+    Implemented several functions
+
+commit 2de0b5681c8522431d042af960762d15f03d467f
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 23:42:49 2020 +0000
+
+    wall.cpp edited online with Bitbucket
+
+commit b01d593faca5e64a22dd326c83f53df4b0902c65
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 23:42:37 2020 +0000
+
+    wall.h edited online with Bitbucket
+
+commit cea56160351f506a9f3b16e97166068021be1a38
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 23:42:21 2020 +0000
+
+    basicgamerules.h edited online with Bitbucket
+
+commit 652d4a9e745d024701a573dc458fbbfa0fa86db6
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 23:42:04 2020 +0000
+
+    basicgamerules.cpp edited online with Bitbucket
+
+commit df8412597d5bc3d0c13fb815ea0054c4a5d73263
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 19:40:43 2020 -0400
+
+    Added Wall
+
+commit d6044a57bb3d048c453e066fb7dec6379494e86e
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 19:40:10 2020 -0400
+
+    Added BasicGameRules
+
+commit f4878d7770a56d4142317ff6fba4b292218f1237
+Merge: e146978 51f67eb
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 19:38:39 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit e14697873aa21fd14f6ee994179187655b394d72
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 19:37:29 2020 -0400
+
+    Tentatively finished
+
+commit 51f67ebf20d659c0e32d67c77a27ef58222f827e
+Merge: 9e4e065 c078934
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Mon Apr 27 17:30:34 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 9e4e065b41f5cdc84b11925b4d3f867edf974832
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Mon Apr 27 17:30:14 2020 -0400
+
+    work on entity
+
+commit c078934813e16aeb6f52c2bb45938b3bb33553fd
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 17:29:22 2020 -0400
+
+    Added inanimate class
+
+commit f8d9e333a1d6ed1fadfc23715255d6d32f99f2f3
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 17:15:44 2020 -0400
+
+    Implemented allowMove and enactMove
+
+commit 7280a0cee67433b78462c97603c8a7e47e7df9fd
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 13:39:58 2020 -0400
+
+    Started inanimate.cpp
+
+commit 8048f25b42a4aa7c1d4463c7d8bb5914302952c9
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 27 12:36:27 2020 -0400
+
+    Minor fixes
+
+commit 2070c1a889c7314abc3ae0b8f1b229e4f69603eb
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun Apr 26 20:35:30 2020 -0400
+
+    Some work on allowMove
+
+commit f7ef8e05cb01435aefb9cc516e7c72011cd20577
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun Apr 26 14:39:32 2020 -0400
+
+    Started BasicGameRules
+
+commit 58f3a4b72e60fd04c45f11101b46ca9933fbb1e7
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun Apr 26 14:39:01 2020 -0400
+
+    Started BasicGameRules
+
+commit 6579b6d4322e360df14d6abff4e6b80cacf32c12
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Sun Apr 26 13:44:19 2020 -0400
+
+    folder implemented
+
+commit 18da93d8344383c74b6b112204dd343018025a3e
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun Apr 26 16:40:58 2020 +0000
+
+    floor.h edited online with Bitbucket
+
+commit ec3f23f5d3aeb47134a8223be472ec2b51419a07
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun Apr 26 16:40:46 2020 +0000
+
+    floor.cpp edited online with Bitbucket
+
+commit 27ba62fd0d89aa8cfa87f7613f7abb86f36e1792
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun Apr 26 16:40:12 2020 +0000
+
+    maze.h edited online with Bitbucket
+
+commit 81ddb3319ae8bb5fa4d15001c42a306ce267c912
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun Apr 26 16:39:59 2020 +0000
+
+    maze.cpp edited online with Bitbucket
+
+commit 55f55452f51c3ac09b9325a509f2cd0312fdb515
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Sun Apr 26 12:31:23 2020 -0400
+
+    Added new directory to hold completed items
+
+commit b1ce8dc828e1770e2e538d0bc67711fae64eac64
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Fri Apr 24 18:25:53 2020 -0400
+
+    uicontrol.cpp implemented
+
+commit f0a92c338c09cd54433d3a847c3d8fdc9ce17265
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Fri Apr 24 18:25:12 2020 -0400
+
+    chasehero.cpp edited
+
+commit e760e387ecede78d43cc09ae4577861c10c8b5b7
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Fri Apr 24 18:19:26 2020 -0400
+
+    all functions edited in textui.cpp
+
+commit ae51626c3bfcfc034604070a9001340b44140ff9
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Fri Apr 24 17:47:08 2020 -0400
+
+    field added in textui.h
+
+commit 8e03c664cabbc0f3b66f32a6199e0b054f491501
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Fri Apr 24 17:19:35 2020 -0400
+
+    uicontrol.cpp implemented
+
+commit 530d867aff892d3f01d911c03ad5f6e06776bc3a
+Merge: 5442c33 cfbe90b
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Thu Apr 23 23:19:19 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 5442c3398a78f42ea18c6eb24d094cddb06d23c3
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Thu Apr 23 23:19:04 2020 -0400
+
+    edit entity.cpp
+
+commit cfbe90b3f110d4a91d57dbeaa6bd036aa1ff570b
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Thu Apr 23 23:09:13 2020 -0400
+
+    More work on maze
+
+commit e8f90697cba9375c176a1269edd8b70f441696a6
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Wed Apr 22 18:47:29 2020 -0400
+
+    capitalize block
+
+commit 520722436c66292f394784582bfcb39c578ca0b8
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Wed Apr 22 22:45:28 2020 +0000
+
+    wall.cpp edited online with Bitbucket
+
+commit 1a095f0bef0468117fe0ca63c9574b596280ba0e
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Wed Apr 22 22:44:55 2020 +0000
+
+    goal.cpp edited online with Bitbucket
+
+commit c40809a2e575344dbcee402dbefeacaf42f3e6fe
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Wed Apr 22 18:44:01 2020 -0400
+
+    fix wall.cpp
+
+commit 8e4ec6cb7699792a6570dd4bf569c98d8f9e2ad4
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Wed Apr 22 15:26:32 2020 -0400
+
+    implement wall.cpp
+
+commit 5ff59119a5d40527492fb4857bb64ebc41bfe39e
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Wed Apr 22 15:01:07 2020 -0400
+
+    add cpp files
+
+commit b5bdbd60d719f3398567ab3f16e8b7c84cb659b9
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Wed Apr 22 14:35:05 2020 -0400
+
+    Started working on maze
+
+commit ea3513122dd1aef42d6607bfb9bac2fe40d80eaf
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed Apr 22 09:54:17 2020 -0400
+
+    functions implemented in goal.cpp
+
+commit 7148098e6fc8536fd56910b3a422504af8a2c4da
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue Apr 21 16:52:14 2020 -0400
+
+    Implemented floor class
+
+commit 1ca5a04f6f076fff6750446d508ef72b275b3dc3
+Merge: 5c533a5 c9c838c
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon Apr 20 18:25:30 2020 -0400
+
+    edited
+
+commit 5c533a5a2bd2bb694a137288c73b09b3f8d017ed
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon Apr 20 18:24:28 2020 -0400
+
+    starter files added
+
+commit c9c838c8cc1a16183381ff059a35853609fc5806
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon Apr 20 18:14:39 2020 -0400
+
+    Updated Readme
+
+commit 30b6ca126b9b50c8b103d15a71ff84cf3ba565d5
+Author: Jingyu Huang <jhuan146@jhu.edu>
+Date:   Mon Apr 20 22:13:47 2020 +0000
+
+    README edited online with Bitbucket
+
+commit d8a672816970a304ceaea503d5e9f35728a94780
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Mon Apr 20 18:07:24 2020 -0400
+
+    add readme
