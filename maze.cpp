@@ -15,7 +15,7 @@ Maze::Maze(int width, int height) {
 
 Maze::~Maze() {
   // Delete each tile 
-  for (int i = 0; i < this->width * this->height; i++) {
+  for (int i = 0; i < (int) this->maze->size(); i++) {
     delete this->maze->at(i);
   }
   delete this->maze;
@@ -93,10 +93,13 @@ Maze* Maze::read(std::istream &in) {
 
     if ((tile == nullptr)) { // Invalid tile either in maze or outside (e.g. entity descriptor)
       in.unget();
+      delete tile;
       break;
     } else if (count >= width * height) { // More tile than stated dimensions 
       in.unget();
       std::cerr << "Error: maze is not valid" << std::endl;
+      delete tile;
+      delete maze;
       return nullptr;
     }
     
@@ -109,8 +112,9 @@ Maze* Maze::read(std::istream &in) {
   
   if (count != width * height) { // Maze dimensions were incorrect
     std::cerr << "Error: maze is not valid" << std::endl;
+    delete maze;
     return nullptr;
   }
-    
+  
   return maze;
 }
