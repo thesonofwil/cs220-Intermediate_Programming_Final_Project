@@ -98,5 +98,5 @@ static double calculateH(int horizaontal, int vertical) {
 }
 
  bool AStarChaseHero::isUser() const {
-         return false;
+   return false;
  }

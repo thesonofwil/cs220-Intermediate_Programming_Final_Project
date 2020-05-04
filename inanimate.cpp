@@ -11,7 +11,7 @@ Inanimate::~Inanimate() {
 
 // Inanimate objects never move on their own and can only be pushed by others.
 // @param entity the inanimate entity 
-Direction Inanimate::getMoveDirection(Game *game, Entity *entity) {
+Direction Inanimate::getMoveDirection(Game*, Entity*) {
   return Direction::NONE;
 }
 

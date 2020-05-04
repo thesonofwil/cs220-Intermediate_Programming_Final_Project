@@ -10,7 +10,7 @@ Goal::~Goal(){
 }
 
 //A goal tile is always allowed to access
-MoveResult Goal::checkMoveOnto(Entity *entity, const Position &fromPos, const Position &tilePos) const{
+MoveResult Goal::checkMoveOnto(Entity *, const Position&, const Position&) const{
   return MoveResult::ALLOW;
 }
 
