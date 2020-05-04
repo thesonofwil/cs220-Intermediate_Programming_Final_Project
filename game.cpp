@@ -176,7 +176,6 @@ Game* Game::loadGame(std::istream &in) {
   game->setMaze(maze);
 
   // isstream pointer now should be at descriptors
-  //while (!in.eof()) { // Read until end of file
   game->setEntity(in);
   
   return game;
