@@ -110,7 +110,7 @@ void Game::gameLoop() {
   // Continuously take turns until game over
   while (!gameOver) {
     for (int i = 0; i < (int) this->entityVec->size(); i++) {
-      // If entity is controller, display the maze
+      // If entity is user, display the maze
       EntityController *controller = this->entityVec->at(i)->getController();
       if (controller->isUser()) {
 	this->ui->render(this);
@@ -143,6 +143,9 @@ void Game::takeTurn(Entity *actor) {
   // Get move from controller 
   EntityController *controller = actor->getController();
   Direction dir = controller->getMoveDirection(this, actor);
+  if (dir == Direction::NONE) { // If inanimate object, return from function
+    return;
+  }
   Position source = actor->getPosition();
   Position dest = source.displace(dir); // Get the potential new position
 

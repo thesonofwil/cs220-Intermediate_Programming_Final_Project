@@ -3,6 +3,7 @@
 
 #include "basicgamerules.h"
 #include "entity.h"
+#include "entitycontroller.h"
 #include "game.h"
 #include "maze.h"
 #include "tile.h"
@@ -42,17 +43,23 @@ bool BasicGameRules::allowMove(Game *game, Entity *actor, const Position &source
 // Precondition: allowMove() returned true
 void BasicGameRules::enactMove(Game *game, Entity *actor, const Position &dest) const {
 
+  EntityController *controller = actor->getController();
+  
   // Check if any pushable objects occupy the dest tile.
-  std::vector<Entity *> objs = game->getEntitiesWithProperty('v');
-  for (int i = 0; i < (int) objs.size(); i++) {
-    if (objs[i]->hasProperty('v')) {
-      Direction dir = getPushDirection(actor, objs[i]);
-      Position newPos = getPushPosition(game, dir, objs[i]);
-      objs[i]->setPosition(newPos);
-      break; // Only one object at a tile at a time
+  if (controller->isUser()) { 
+    std::vector<Entity *> objs = game->getEntitiesWithProperty('v');
+    for (int i = 0; i < (int) objs.size(); i++) {
+      if (objs[i]->getPosition() == dest) {
+	std::cout << "Current pos: " << objs[i]->getPosition() << std::endl;
+	Direction dir = getPushDirection(actor, objs[i]);
+	Position newPos = getPushPosition(game, dir, objs[i]);
+	std::cout << "New pos: " << newPos << std::endl;
+	objs[i]->setPosition(newPos);
+	std::cout << "Get pos: " << objs[i]->getPosition() << std::endl;
+	break; // Only one object at a tile at a time
+      }
     }
   }
-  
   actor->setPosition(dest);
 }
 
@@ -98,7 +105,7 @@ Direction BasicGameRules::getPushDirection(Entity *actor, Entity *obj) const {
 
   int x = objPos.getX() - actorPos.getX();
   int y = objPos.getY() - actorPos.getY();
-
+  
   if (x == 0 && y == 1) {
     return Direction::UP;
   } else if (x == 0 && y == -1) {
