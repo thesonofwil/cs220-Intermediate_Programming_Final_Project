@@ -321,9 +321,10 @@ void testTextUIRender(TestObjs *objs) {
   //redirect cout to a string stream
   std::stringstream renderOutput;
   std::streambuf *coutbuf = std::cout.rdbuf();
-  std::cout.rdbuf(renderOutput.rdbuf());
+  std::streambuf *psbuf = renderOutput.rdbuf();
+  std::cout.rdbuf(psbuf);
   //call render
-  objs->game1->getUI()->render(objs->game1);
+  (objs->game1->getUI())->render(objs->game1);
   //direct cout back to cout
   std::cout.rdbuf(coutbuf);
 

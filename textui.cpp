@@ -62,6 +62,17 @@ void TextUI::render(Game *game){
     }
     std::cout << std::endl;
   }
+
+  //Error checking
+  for (int i = 0; i < height; i++) {
+    for (int j = 0; j < width; j++) {
+      Position curr(j, i);
+      Entity* target = game->getEntityAt(curr);
+      if (target != nullptr){
+        std::cout << "(" << j << " " << i << std::endl;
+      }
+    }
+  }
   if (!(this->message).empty()){
     std::cout << this->message << std::endl;
     (this->message).erase();
