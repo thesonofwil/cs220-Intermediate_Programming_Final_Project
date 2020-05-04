@@ -78,7 +78,7 @@ void TextUI::render(Game *game){
   */
   //Check if a message needs to be printed and print
   if (!(this->message).empty()){
-    std::cout << this->message << std::endl;
+    std::cout << ": " << this->message << std::endl;
     (this->message).erase();
   }
 }
