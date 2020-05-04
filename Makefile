@@ -38,7 +38,7 @@ build/%.o : %.cpp
 	@mkdir -p build
 	$(CXX) $(CXXFLAGS) -c $*.cpp -o build/$*.o
 
-all : minotaur positiontest tiletest mazetest entitytest gametest
+all : minotaur positiontest tiletest mazetest gametest
 
 minotaur : $(MAIN_OBJS) $(OBJS)
 	$(CXX) -o $@ $(MAIN_OBJS) $(OBJS)
@@ -63,14 +63,11 @@ MAZETEST_OBJS = build/maze.o build/tile.o build/wall.o build/floor.o build/goal.
 mazetest : build/mazetest.o build/tctestpp.o $(MAZETEST_OBJS)
 	$(CXX) -o $@ build/mazetest.o build/tctestpp.o $(MAZETEST_OBJS)
 
-entitytest : build/entitytest.o build/tctestpp.o
-	$(CXX) -o $@ build/entitytest.o build/tctestpp.o
-
 gametest : build/gametest.o build/tctestpp.o build/scriptedcontrol.o build/textui.o $(OBJS)
 	$(CXX) -o $@ build/gametest.o build/tctestpp.o build/scriptedcontrol.o build/textui.o $(OBJS)
 
 clean :
-	rm -f minotaur tminotaur positiontest tiletest mazetest entitytest gametest
+	rm -f minotaur tminotaur positiontest tiletest mazetest gametest
 	rm -rf build
 
 # Running the command "make depend" will automatically generate correct
