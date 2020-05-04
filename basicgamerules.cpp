@@ -121,9 +121,11 @@ Position BasicGameRules::getPushPosition(Game *game, Direction dir, Entity *obj)
   Position newPos = obj->getPosition().displace(dir); // Get new position if object were to be pushed
   const Tile *destTile = maze->getTile(newPos); // Get tile at destination
   MoveResult check = destTile->checkMoveOnto(obj, obj->getPosition(), newPos);
+
+  Entity *block = game->getEntityAt(newPos); // Check if there exists an entity at displaced position
   
   // Check if newPos is valid
-  if (!newPos.inBounds(maze->getWidth(), maze->getHeight()) || check == MoveResult::BLOCK) {
+  if (!newPos.inBounds(maze->getWidth(), maze->getHeight()) || check == MoveResult::BLOCK || block != nullptr) {
     return obj->getPosition(); // No change in position
   }
   return newPos; 
@@ -142,6 +144,7 @@ bool BasicGameRules::checkObjCanBePushed(Game *game, Entity *actor, const Positi
     }
     
     Position pushPos = getPushPosition(game, dir, object);
+   
     if (pushPos == object->getPosition()) { // Object cannot be pushed
       return false;
     }
