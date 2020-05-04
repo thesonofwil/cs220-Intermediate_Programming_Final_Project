@@ -54,9 +54,9 @@ void TextUI::render(Game *game){
       Position curr(j, i);
       Entity* target = game->getEntityAt(curr);
       if (target != nullptr){
-	    std::cout << target->getGlyph();
+        std::cout << target->getGlyph();
       } else {
-	    const Tile *tile = maze->getTile(curr);
+	const Tile *tile = maze->getTile(curr);
         std::cout << tile->getGlyph();
       }
     }
