@@ -42,10 +42,12 @@ Direction TextUI::getMoveDirection(){
 }
 
 void TextUI::displayMessage(const std::string &msg, bool){
+  //Save a message string to the field message
   this->message = msg;
 }
 
 void TextUI::render(Game *game){
+  //Get and print maze
   Maze *maze = game->getMaze();
   int width = maze->getWidth();
   int height = maze->getHeight();
@@ -62,7 +64,7 @@ void TextUI::render(Game *game){
     }
     std::cout << std::endl;
   }
-
+  /**
   //Error checking
   for (int i = 0; i < height; i++) {
     for (int j = 0; j < width; j++) {
@@ -73,6 +75,8 @@ void TextUI::render(Game *game){
       }
     }
   }
+  */
+  //Check if a message needs to be printed and print
   if (!(this->message).empty()){
     std::cout << this->message << std::endl;
     (this->message).erase();
