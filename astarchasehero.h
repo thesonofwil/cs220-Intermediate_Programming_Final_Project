@@ -32,10 +32,11 @@ public:
   virtual bool isUser() const;
 	
  private:
-  virtual Node *getN(Node current,Direction x, Game *game, Entity *entity, Position poshero);
+  virtual Node *getN(Node* current,Direction x, Game *game, Entity *entity, Position poshero);
   virtual bool available(Game *game,Entity *entity, Node *n, Direction x);
   virtual bool contain(std::vector<Node*> v, Node *x);
   virtual Direction getPushDirection(Position last, Position secondlast) const;
+  virtual Direction reconstruct_path(Node*);
 }
 ;
 

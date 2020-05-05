@@ -21,14 +21,13 @@ using std::priority_queue;
 using std::map;
 using std::pair;
 
-
 AStarChaseHero::AStarChaseHero(){
  }
  
  AStarChaseHero::~AStarChaseHero(){
  }
  
- Node *AStarChaseHero::getN(Node *current,Direction x, Game *game, Entity *entity,Position poshero) {
+ AStarChaseHero::Node* AStarChaseHero::getN(Node* current, Direction x, Game *game, Entity *entity,Position poshero) {
  	if (!available(game,entity, current, x)){
 		return nullptr;
 	}
@@ -55,7 +54,9 @@ bool AStarChaseHero::contain(vector<Node*> v, Node *x){
 		        return false;
 	        }
         }
+	return false;
 }
+
 Direction AStarChaseHero::reconstruct_path(Node *goal) {
 	vector<Node*> total_path;
         Node *temp = goal;
@@ -64,7 +65,7 @@ Direction AStarChaseHero::reconstruct_path(Node *goal) {
                   temp= temp->parent;
 	}
 		int length = total_path.size();
-		return getPushDirection(vector[length]->pos,vector[length-1]->pos);
+		return getPushDirection(total_path[length]->pos, total_path[length-1]->pos);
         }
 
 Direction AStarChaseHero::getPushDirection(Position last, Position secondlast) const {
@@ -119,23 +120,24 @@ Direction AStarChaseHero::getPushDirection(Position last, Position secondlast) c
     openSetCopy.push_back(start);
 
     while(!openSet.empty()){
-        Node *current = openSet.top();
+        Node* current = openSet.top();
 	if(current->pos == poshero){
-		return reconstruct(poshero, current->pos);
+		return reconstruct_path(current);
 	}
 
-	openSetCopy.pop_back(current);
+	openSetCopy.pop_back();
 	openSet.pop();
-	Node *up = getN(current, Direction::UP, game, entity,poshero);
-        Node *down = getN(current, Direction::DOWN, game, entity,poshero);
-        Node *left = getN(current, Direction::LEFT, game, entity,poshero);
-        Node *right = getN(current, Direction::RIGHT, game, entity,poshero);
+	Node* up = getN(current, Direction::UP, game, entity,poshero);
+        Node* down = getN(current, Direction::DOWN, game, entity,poshero);
+        Node* left = getN(current, Direction::LEFT, game, entity,poshero);
+        Node* right = getN(current, Direction::RIGHT, game, entity,poshero);
 
 	vector<Node*> neighbors{up, down, left, right};
 		
-	for(Node *n : neighbors) {
-		if(n == nullptr)
+	for(Node* n : neighbors) {
+	        if(n == nullptr){
 			continue;
+		}
 		int newg = current->g +1;
 		if(newg < n->g) {
 			n->parent = current;
@@ -147,8 +149,9 @@ Direction AStarChaseHero::getPushDirection(Position last, Position secondlast) c
 			}
 		}				
 	}
-	return Direction::NONE;
     }
+    return Direction::NONE;
+ }
    
 
  bool AStarChaseHero::isUser() const {
