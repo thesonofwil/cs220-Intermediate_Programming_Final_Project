@@ -5,11 +5,21 @@
 #include "position.h"
 #include "entity.h"
 #include "game.h"
+#include "maze.h"
 #include "gamerules.h"
 #include "entitycontroller.h"
 #include <cstdlib>
 #include <vector>
 #include <utility> 
+#include <map>
+#include <queue>
+#include <iostream>
+
+using std::vector;
+using std::priority_queue;
+using std::map;
+using std::pair;
+
 
 AStarChaseHero::AStarChaseHero(){
  }
@@ -25,8 +35,22 @@ static double calculateH(int horizaontal, int vertical) {
     return H;
 }
 */
+namespace{
+	struct Node {
+	//	int x;
+	//	int y;
+		*Node parent;
+		Position pos;
+		int f;
+		int g;
+		int h;
+	}
+}
 
-  Direction AStarChaseHero::getMoveDirection(Game *game, Entity *entity){
+
+
+ Direction AStarChaseHero::getMoveDirection(Game *game, Entity *entity){
+   
     std::vector<Entity *> heroes;
     heroes = game->getEntitiesWithProperty('h');
     //Return NONE if vector heroes is empty
@@ -47,7 +71,79 @@ static double calculateH(int horizaontal, int vertical) {
         nearest = poshero;
       }
     }
+    
+    Postition goal = poshero;
+    Postion start = posminotaur;
+    priority_queue <Postion> openSet;
+    open.push[start];
+    map<Position, Position> cameFrom;
+    map<Position, int> gscore;
+    map<Position, int> fscore;
+    //initialize to infinity
+    int h(Position x) {
+      return  poshero.distanceFrom(x);
+    }
+    fscore.insert(std::pair<Position,int>(start,h(start));
+    //find the smallest f value
+    typedef std::pair<Position, int> MyPairType;
+    struct CompareSecond {
+    bool operator()(const MyPairType& left, const MyPairType& right) const {
+        return left.second < right.second;
+    }
+   }
 
+   void reconstruct_path(cameFrom, current) {
+   	priority_queue<Position> total_path;
+	while(cameFrom.contains(current){
+			current = cameFrom(current);
+			total_path.push(current);
+			}
+		return total_path;
+	}
+
+    while(!openSet.empty()){
+    	//Position current;
+        Node *current;
+    	void getMin(std::map<Position, int> fscore){
+        std::pair<Position, int> min  = *min_element(fscore.begin(), fscore.end(), CompareSecond());
+        current =  min.first;
+	}
+
+	if(current = goal){
+		return reconstruct(cameFrom, current);
+	}
+
+	openSet.pop();
+	//do for NSEW
+	for(avaiable1){
+		Position up;
+		up.setX() = current.getX()+1;
+		up.setY() = current.getY();
+		gscore.insert(std::pair<Position,int>(up, up.distanceFrom()
+		int new_gscore = gscore.find(current)->second + current.distanceFrom(up);
+	       	if(new_gscore < gscore.find(neighbor)->second){
+			cameFrom[neighbor] = current;
+			gscore.find(neighbor)->second = new_gscore;
+			fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
+			//find in priority queue
+			if(openSet.top() != neighbor) {
+				openSet.push(neighbor);
+			}
+		}
+	}
+	for(available2){
+	}
+	for(avaible3) {
+	}
+	for(available4){
+	}
+
+   }
+
+   return Direction::NONE;
+    }
+    
+    
     int horizontal = poshero.getX()-posminotaur.getX();
     int vertical = poshero.getY()-posminotaur.getY();
     GameRules* gamerules = game -> getGameRules();
