@@ -51,10 +51,10 @@ bool AStarChaseHero::contain(vector<Node*> v, Node *x){
 	for(Node *n : v){
 		if(x == n){
 			return true;
-	}else {
-		return false;
-	}
-}
+	        }else {
+		        return false;
+	        }
+        }
 }
 Direction AStarChaseHero::reconstruct_path(Node *goal) {
 	vector<Node*> total_path;
