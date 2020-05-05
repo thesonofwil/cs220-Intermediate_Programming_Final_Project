@@ -34,7 +34,7 @@ static double calculateH(int horizaontal, int vertical) {
     H = sqrt(H); 
     return H;
 }
-*/
+
 namespace{
 	struct Node {
 	//	int x;
@@ -47,7 +47,7 @@ namespace{
 	}
 }
 
-
+*/
 
  Direction AStarChaseHero::getMoveDirection(Game *game, Entity *entity){
    
@@ -72,19 +72,29 @@ namespace{
       }
     }
     
-    Postition goal = poshero;
-    Postion start = posminotaur;
+    Position goal = poshero;
+    Position start = posminotaur;
+    //all postiions in maze
     priority_queue <Postion> openSet;
     open.push[start];
     map<Position, Position> cameFrom;
     map<Position, int> gscore;
     map<Position, int> fscore;
+   
+    GameRules* gamerules = game -> getGameRules();
+    bool available1 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::UP));
+    bool available2 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::DOWN));
+    bool available3 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::LEFT));
+    bool available4 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::RIGHT));   
+   
     //initialize to infinity
     int h(Position x) {
       return  poshero.distanceFrom(x);
     }
+
     fscore.insert(std::pair<Position,int>(start,h(start));
-    //find the smallest f value
+    
+		    //find the smallest f value
     typedef std::pair<Position, int> MyPairType;
     struct CompareSecond {
     bool operator()(const MyPairType& left, const MyPairType& right) const {
@@ -102,8 +112,8 @@ namespace{
 	}
 
     while(!openSet.empty()){
-    	//Position current;
-        Node *current;
+        Position current;
+
     	void getMin(std::map<Position, int> fscore){
         std::pair<Position, int> min  = *min_element(fscore.begin(), fscore.end(), CompareSecond());
         current =  min.first;
@@ -115,14 +125,15 @@ namespace{
 
 	openSet.pop();
 	//do for NSEW
-	for(avaiable1){
+	int i = 1;
+	if(avaiable1){
 		Position up;
-		up.setX() = current.getX()+1;
-		up.setY() = current.getY();
-		gscore.insert(std::pair<Position,int>(up, up.distanceFrom()
+		//up.setX() = current.getX()+1;
+		//up.setY() = current.getY();
+		gscore.insert(std::pair<Position,int>(up,i);
 		int new_gscore = gscore.find(current)->second + current.distanceFrom(up);
 	       	if(new_gscore < gscore.find(neighbor)->second){
-			cameFrom[neighbor] = current;
+			cameFrom[neighbor] = current;//HELP
 			gscore.find(neighbor)->second = new_gscore;
 			fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
 			//find in priority queue
@@ -131,11 +142,48 @@ namespace{
 			}
 		}
 	}
-	for(available2){
+	if(available2){
+		Position down;
+                gscore.insert(std::pair<Position,int>(down,i);
+                int new_gscore = gscore.find(current)->second + current.distanceFrom(down);
+                if(new_gscore < gscore.find(neighbor)->second){
+                        cameFrom[neighbor] = current;//HELP
+                        gscore.find(neighbor)->second = new_gscore;
+                        fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
+                        //find in priority queue
+                        if(openSet.top() != neighbor) {
+                                openSet.push(neighbor);
+                        }
+                }
+
 	}
-	for(avaible3) {
+	if(avaible3) {
+		Position left;
+                gscore.insert(std::pair<Position,int>(left,i);
+                int new_gscore = gscore.find(current)->second + current.distanceFrom(left);
+                if(new_gscore < gscore.find(neighbor)->second){
+                        cameFrom[neighbor] = current;//HELP
+                        gscore.find(neighbor)->second = new_gscore;
+                        fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
+                        //find in priority queue
+                        if(openSet.top() != neighbor) {
+                                openSet.push(neighbor);
+                        }
+                }
 	}
-	for(available4){
+	if(available4){
+		Position right;
+                gscore.insert(std::pair<Position,int>(right,i);
+                int new_gscore = gscore.find(current)->second + current.distanceFrom(right);
+                if(new_gscore < gscore.find(neighbor)->second){
+                        cameFrom[neighbor] = current;//HELP
+                        gscore.find(neighbor)->second = new_gscore;
+                        fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
+                        //find in priority queue
+                        if(openSet.top() != neighbor) {
+                                openSet.push(neighbor);
+                        }
+                }
 	}
 
    }
@@ -144,6 +192,7 @@ namespace{
     }
     
     
+    /*
     int horizontal = poshero.getX()-posminotaur.getX();
     int vertical = poshero.getY()-posminotaur.getY();
     GameRules* gamerules = game -> getGameRules();
@@ -192,7 +241,7 @@ namespace{
       return Direction::NONE;
     }
 }
-
+*/
  bool AStarChaseHero::isUser() const {
    return false;
  }
