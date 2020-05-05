@@ -59,7 +59,6 @@ Entity* Game::getEntityAt(const Position &pos) {
   // Loop backwards to allow entities that were added later to 
   // be displayed when occupied the same tile as another entity.
   for (int i = (int) this->entityVec->size() - 1; i >= 0; i--) {
-    //for (int i = 0; i < (int) this->entityVec->size(); i++) { 
     if (this->entityVec->at(i)->getPosition() == pos) {
       return this->entityVec->at(i);
      }
@@ -157,7 +156,7 @@ void Game::takeTurn(Entity *actor) {
     this->gameRules->enactMove(this, actor, dest);
   } else {
     if (controller->isUser()) { // Output error if user makes an illegal move
-      this->ui->displayMessage("Illegal Move"); // No need for second parameter, defaults to false
+      this->ui->displayMessage("Illegal move"); // No need for second parameter, defaults to false
     }
   }
 }

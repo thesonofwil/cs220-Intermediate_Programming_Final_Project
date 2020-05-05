@@ -5,11 +5,22 @@
 #include "position.h"
 #include "entity.h"
 #include "game.h"
+#include "maze.h"
 #include "gamerules.h"
 #include "entitycontroller.h"
 #include <cstdlib>
 #include <vector>
 #include <utility> 
+#include <map>
+#include <queue>
+#include <iostream>
+#include <limits>
+
+using std::vector;
+using std::priority_queue;
+using std::map;
+using std::pair;
+
 
 AStarChaseHero::AStarChaseHero(){
  }
@@ -17,23 +28,69 @@ AStarChaseHero::AStarChaseHero(){
  AStarChaseHero::~AStarChaseHero(){
  }
  
+ Node *AStarChaseHero::getN(Node *current,Direction x, Game *game, Entity *entity,Position poshero) {
+ 	if (!available(game,entity, current, x)){
+		return nullptr;
+	}
+	Node *neighbor = new Node;
+        neighbor->f = 0;
+        neighbor->g = 0;
+        neighbor->h = (current->pos).distanceFrom(poshero);
+        neighbor->pos = current->pos.displace(x);//check is syntax is right
+        neighbor->parent = current;
+	return neighbor;
+ }
 
-/*
-static double calculateH(int horizaontal, int vertical) {
-    double H  = pow(horizontal, 2) + pow(vertical, 2);       //calculating Euclidean distance (h)
-    H = sqrt(H); 
-    return H;
+bool AStarChaseHero::available(Game *game,Entity *entity, Node *n, Direction x){
+
+    GameRules* gamerules = game -> getGameRules();
+    return gamerules -> allowMove(game, entity, n->pos, (n->pos).displace(x));
 }
-*/
 
-  Direction AStarChaseHero::getMoveDirection(Game *game, Entity *entity){
+bool AStarChaseHero::contain(vector<Node*> v, Node *x){
+	for(Node *n : v){
+		if(x == n){
+			return true;
+	}else {
+		return false;
+	}
+}
+}
+Direction AStarChaseHero::reconstruct_path(Node *goal) {
+	vector<Node*> total_path;
+        Node *temp = goal;
+	while(temp->parent != nullptr){
+		  total_path.push_back(temp);
+                  temp= temp->parent;
+	}
+		int length = total_path.size();
+		return getPushDirection(vector[length]->pos,vector[length-1]->pos);
+        }
+
+Direction AStarChaseHero::getPushDirection(Position last, Position secondlast) const {
+
+  int x = last.getX() - secondlast.getX();
+  int y = last.getY() - secondlast.getY();
+
+  if (x == 0 && y == 1) {
+    return Direction::UP;
+  } else if (x == 0 && y == -1) {
+    return Direction::DOWN;
+  } else if (x == 1 && y == 0) {
+    return Direction::RIGHT;
+  } else if (x == -1 && y == 0) {
+    return Direction::LEFT;
+  }
+  return Direction::NONE; // Invalid push
+}
+
+ Direction AStarChaseHero::getMoveDirection(Game *game, Entity *entity){
+   
     std::vector<Entity *> heroes;
     heroes = game->getEntitiesWithProperty('h');
-    //Return NONE if vector heroes is empty
     if(heroes.empty()){
       return Direction::NONE;
     }
-    //Find closest hero from the minotaur
     Position posminotaur = entity->getPosition();
     Position poshero = (*heroes.begin()) -> getPosition();
     int distance = poshero.distanceFrom(posminotaur);
@@ -47,55 +104,52 @@ static double calculateH(int horizaontal, int vertical) {
         nearest = poshero;
       }
     }
+    
+  	Node *start = new Node;
+	start->f = std::numeric_limits<int>::max();
+	start->g = 0;
+	start->h = posminotaur.distanceFrom(poshero);
+	start->pos = posminotaur;
+	start->parent = nullptr;
+	
 
-    int horizontal = poshero.getX()-posminotaur.getX();
-    int vertical = poshero.getY()-posminotaur.getY();
-    GameRules* gamerules = game -> getGameRules();
-    bool available1 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::UP));
-    bool available2 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::DOWN));
-    bool available3 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::LEFT));
-    bool available4 = gamerules -> allowMove(game, entity, posminotaur, posminotaur.displace(Direction::RIGHT));
+    priority_queue <Node*> openSet;
+    vector<Node*> openSetCopy;
+    openSet.push(start);
+    openSetCopy.push_back(start);
 
-    int h;
-    int f1, f2, f3, f4;
-    int g = 1;
-    if(available1){
-      horizontal = poshero.getX()-posminotaur.getX();
-      vertical = poshero.getY()-(posminotaur.getY()+1);
-      h = horizontal + vertical;
-      f1 = g + h;
-    }
-    if(available2){
-      horizontal = poshero.getX()-posminotaur.getX();
-      vertical = poshero.getY()-(posminotaur.getY()-1);
-      h = horizontal + vertical;
-      f2 = g + h;
-    }
-    if(available3){
-      horizontal = poshero.getX()-(posminotaur.getX()-1);
-      vertical = poshero.getY()-posminotaur.getY();
-      h = horizontal + vertical;
-      f3 = g + h;
-    }
-    if(available4){
-      horizontal = poshero.getX()-(posminotaur.getX()+1);
-      vertical = poshero.getY()-posminotaur.getY();
-      h = horizontal + vertical;
-      f4 = g + h;
-    }
+    while(!openSet.empty()){
+        Node *current = openSet.top();
+	if(current->pos == poshero){
+		return reconstruct(poshero, current->pos);
+	}
 
-    if ((f1 > f2) && (f1 > f3) && (f1 > f4)) {
-      return Direction::UP;
-    } else if(f2 > f1 && f2 > f3 && f2 > f4) {
-      return Direction::DOWN;
-    }  else if(f3 > f1 && f3 > f2 && f3 > f4) {
-      return Direction::LEFT;
-    } else if(f4 > f2 && f4 > f3 && f4 > f1) {
-      return Direction::RIGHT;
-    } else {
-      return Direction::NONE;
+	openSetCopy.pop_back(current);
+	openSet.pop();
+	Node *up = getN(current, Direction::UP, game, entity,poshero);
+        Node *down = getN(current, Direction::DOWN, game, entity,poshero);
+        Node *left = getN(current, Direction::LEFT, game, entity,poshero);
+        Node *right = getN(current, Direction::RIGHT, game, entity,poshero);
+
+	vector<Node*> neighbors{up, down, left, right};
+		
+	for(Node *n : neighbors) {
+		if(n == nullptr)
+			continue;
+		int newg = current->g +1;
+		if(newg < n->g) {
+			n->parent = current;
+			n->g = newg;
+			n->f = n->g + n->h;
+			if(!contain(openSetCopy, n)){
+				openSet.push(n);
+				openSetCopy.push_back(n);
+			}
+		}				
+	}
+	return Direction::NONE;
     }
-}
+   
 
  bool AStarChaseHero::isUser() const {
    return false;
