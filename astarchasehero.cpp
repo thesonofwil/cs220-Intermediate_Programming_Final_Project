@@ -132,27 +132,27 @@ namespace{
 		//up.setY() = current.getY();
 		gscore.insert(std::pair<Position,int>(up,i);
 		int new_gscore = gscore.find(current)->second + current.distanceFrom(up);
-	       	if(new_gscore < gscore.find(neighbor)->second){
-			cameFrom[neighbor] = current;//HELP
-			gscore.find(neighbor)->second = new_gscore;
-			fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
+	       	if(new_gscore < gscore.find(up)->second){
+			cameFrom[up] = current;//HELP
+			gscore.find(up)->second = new_gscore;
+			fscore.find(up)->second = gscore.find(up)->second + h(up);
 			//find in priority queue
-			if(openSet.top() != neighbor) {
-				openSet.push(neighbor);
+			if(openSet.top() != up) {
+				openSet.push(up);
 			}
 		}
 	}
 	if(available2){
-		Position down;
+		Position up;
                 gscore.insert(std::pair<Position,int>(down,i);
                 int new_gscore = gscore.find(current)->second + current.distanceFrom(down);
-                if(new_gscore < gscore.find(neighbor)->second){
-                        cameFrom[neighbor] = current;//HELP
-                        gscore.find(neighbor)->second = new_gscore;
-                        fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
+                if(new_gscore < gscore.find(down)->second){
+                        cameFrom[down] = current;//HELP
+                        gscore.find(down)->second = new_gscore;
+                        fscore.find(down)->second = gscore.find(down)->second + h(down);
                         //find in priority queue
-                        if(openSet.top() != neighbor) {
-                                openSet.push(neighbor);
+                        if(openSet.top() != down) {
+                                openSet.push(down);
                         }
                 }
 
@@ -161,13 +161,13 @@ namespace{
 		Position left;
                 gscore.insert(std::pair<Position,int>(left,i);
                 int new_gscore = gscore.find(current)->second + current.distanceFrom(left);
-                if(new_gscore < gscore.find(neighbor)->second){
-                        cameFrom[neighbor] = current;//HELP
-                        gscore.find(neighbor)->second = new_gscore;
-                        fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
+                if(new_gscore < gscore.find(left)->second){
+                        cameFrom[left] = current;//HELP
+                        gscore.find(left->second = new_gscore;
+                        fscore.find(left)->second = gscore.find(left)->second + h(left);
                         //find in priority queue
-                        if(openSet.top() != neighbor) {
-                                openSet.push(neighbor);
+                        if(openSet.top() != left) {
+                                openSet.push(left);
                         }
                 }
 	}
@@ -175,13 +175,13 @@ namespace{
 		Position right;
                 gscore.insert(std::pair<Position,int>(right,i);
                 int new_gscore = gscore.find(current)->second + current.distanceFrom(right);
-                if(new_gscore < gscore.find(neighbor)->second){
-                        cameFrom[neighbor] = current;//HELP
-                        gscore.find(neighbor)->second = new_gscore;
-                        fscore.find(neighbor)->second = gscore.find(neighbor)->second + h(neighbor);
+                if(new_gscore < gscore.find(right)->second){
+                        cameFrom[right] = current;//HELP
+                        gscore.find(right)->second = new_gscore;
+                        fscore.find(right)->second = gscore.find(right)->second + h(right);
                         //find in priority queue
-                        if(openSet.top() != neighbor) {
-                                openSet.push(neighbor);
+                        if(openSet.top() != right) {
+                                openSet.push(right);
                         }
                 }
 	}
