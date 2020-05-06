@@ -24,6 +24,7 @@ const char *m1 =
   "#.....<..#\n"
   "##########\n";
 
+
 //bad maze data
 const char *m2 =
   "9 6\n"
@@ -62,12 +63,49 @@ const char *m3_illegal_row =
     "#.....<..#\n"
     "##########\n";
 
+// Odd (but still valid) maze data
+const char *m6 =
+  "2 2\n"
+  "##\n"
+  "#.\n";
+
+const char *m7 =
+  "6 5\n" //no goal
+  "######\n"
+  "#....#\n"
+  "#....#\n"
+  "#....#\n"
+  "######\n";
+
+// More bad mazes 
+const char *m8 =
+  "5 5\n"
+  "#####\n"
+  "#.<.#\n"
+  "#...#\n"
+  "#.>.#\n"
+  "#####\n";
+
+const char *m9 =
+  "6 7\n" //mismatched dimensions
+  "#######\n"
+  "#..<..#\n"
+  "#.....#\n"
+  "#.....#\n"
+  "#.....#\n"
+  "#######\n";
+
+
 struct TestObjs {
   Maze *maze1;
   Maze *maze2;
   Maze *maze3;
   Maze *maze4;
   Maze *maze5;
+  Maze *maze6; //Maddie
+  Maze *maze7; //Maddie
+  Maze *maze8; //Maddie
+  Maze *maze9; //Maddie
 };
 
 TestObjs *setup() {
@@ -77,6 +115,10 @@ TestObjs *setup() {
   objs->maze3 = readFromString(m3);
   objs->maze4 = readFromString(m2_invalid_dims);
   objs->maze5 = readFromString(m3_illegal_row);  
+  objs->maze6 = readFromString(m6);
+  objs->maze7 = readFromString(m7);
+  objs->maze8 = readFromString(m8);
+  objs->maze9 = readFromString(m9);
   return objs;
 }
 
@@ -86,6 +128,10 @@ void cleanup(TestObjs *objs) {
   delete objs->maze3;
   delete objs->maze4;
   delete objs->maze5;
+  delete objs->maze6;
+  delete objs->maze7;
+  delete objs->maze8;
+  delete objs->maze9;
   delete objs;
 }
 
@@ -151,13 +197,13 @@ void testGetTile(TestObjs *objs) {
 }
 
 void testSetTile(TestObjs *) {
-  Maze *maze = new Maze(10, 5); // Width 10, Height 5
+  Maze *maze = new Maze(10, 5);
 
   Tile *tile1 = TileFactory::getInstance()->createFromChar('#');
   Tile *tile2 = TileFactory::getInstance()->createFromChar('.');
   maze->setTile(Position(0, 0), tile1);
   ASSERT("#" == maze->getTile(Position(0, 0))->getGlyph());
-  maze->setTile(Position(4, 3), tile2); // Row 4, Col 3 = index 43 
+  maze->setTile(Position(4, 3), tile2);
   ASSERT("." == maze->getTile(Position(4, 3))->getGlyph());
 
   TileFactory *tfac = TileFactory::getInstance();
@@ -174,9 +220,13 @@ void testReadMaze(TestObjs *objs){
   ASSERT(!(objs->maze1 == nullptr));
   ASSERT(objs->maze2 == nullptr);
   ASSERT(objs->maze3 == nullptr);
+  ASSERT(!(objs->maze6 == nullptr));
+  ASSERT(!(objs->maze7 == nullptr));
+  ASSERT(objs->maze8 == nullptr);
 }
 
 void testInvalidMazeDimensions(TestObjs *objs) {
   ASSERT(objs->maze4 == nullptr);
   ASSERT(objs->maze5 == nullptr);
+  ASSERT(objs->maze9 == nullptr);
 }
