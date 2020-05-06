@@ -1,5 +1,9 @@
-// Brhea D'Mello, Wilson Tjoeng
-// bdmello2, wtjoeng1
+//Brhea D'Mello                                                                                                              
+//bdmello2                                                                                                                       
+//Jingyu Huang                                                                                                                   
+//jhuan146                                                                                                                       
+//Wilson Tjoeng                                                                                                                  
+//wtjoeng1 
 
 #include <string>
 #include "entity.h"

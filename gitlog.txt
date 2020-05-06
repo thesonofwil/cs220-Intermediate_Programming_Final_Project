@@ -1,3 +1,163 @@
+commit 0d6ba136205507148d03eb4b33463d617ed787fe
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed May 6 19:40:38 2020 -0400
+
+    program descriptions and brief contribution added in README
+
+commit 2ee0368231863b86944cb13ce1ea98eedb748e6a
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed May 6 19:26:30 2020 -0400
+
+    names and jheds added at front
+
+commit 0355369e77b23620b859aa47d73709a2721360e6
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed May 6 19:12:59 2020 -0400
+
+    gitlog.txt updated
+
+commit 702b2277dd0059cb1261543015b180757ed13fe1
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue May 5 22:59:55 2020 -0400
+
+    Updated h file
+
+commit e069127b11666cf259ef0c7728a812844a2e0aa2
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue May 5 22:34:28 2020 -0400
+
+    Seg fault fixes
+
+commit 2d9da45e4aca6f100ed519ff142a598651308e37
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue May 5 22:07:37 2020 -0400
+
+    Added more conditions to allowMove
+
+commit 237f08e86104d0dade60182e4914321fadb106f4
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Tue May 5 19:01:55 2020 -0400
+
+    all makefile errors fixed
+
+commit b05e8c9cbf36e5752862d8e2f414d846ad46bd61
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Tue May 5 18:25:14 2020 -0400
+
+    astarchasehero.cpp updated
+
+commit 16b16045e893eb6eb0e423702ff14bcefe4869c3
+Merge: 3509eaf 0469d2b
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Tue May 5 18:21:45 2020 -0400
+
+    merge
+
+commit 3509eaf83368174b4925664979fd436d9ddda45e
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Tue May 5 18:21:28 2020 -0400
+
+    merge
+
+commit 0469d2bef0c2f2f9fbc5eccb2f6e4e1ce2688a81
+Merge: 5a86c9e 14e5064
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Tue May 5 18:18:45 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 5a86c9e51684070494cae282122e1eb2f87aa2b9
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Tue May 5 18:18:28 2020 -0400
+
+    astarchasehero
+
+commit 14e5064a6cb38780b8c6ff8157dc1bd8995b77ca
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Tue May 5 15:43:54 2020 -0400
+
+    Deleted a comment
+
+commit 945ce95e36d2ebcce43162875ce59123a8659d02
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Mon May 4 22:08:30 2020 -0400
+
+    edit
+
+commit c5f92274050ee6d24f41ded642302c45367ac94f
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Mon May 4 22:03:22 2020 -0400
+
+    astarchasehero
+
+commit 90d93d0f0667435db219876ab1154c88defb4786
+Merge: 72f92c2 5aa4a3e
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Mon May 4 20:54:44 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 72f92c20d93bde4ad9a498c0f62eb0233db7a791
+Author: Brhea D'Mello <brheadmello@gmail.com>
+Date:   Mon May 4 20:54:26 2020 -0400
+
+    astar
+
+commit 5aa4a3e812a28f810c0576cde6f52643f7ef27e7
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 19:33:11 2020 -0400
+
+    Prevents push if an existing entity is in the way
+
+commit 7de50358cbd97f9cbdb65567360870a9f34d5cdc
+Merge: 466206b 9dd8df4
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 17:24:06 2020 -0400
+
+    Merge branch 'master' of https://bitbucket.org/bdmello/final
+
+commit 466206bc7a8e97d2125007cb2eec9f0545f8c875
+Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
+Date:   Mon May 4 17:23:56 2020 -0400
+
+    Change to print statement
+
+commit 9dd8df4a86e422e0fbdcca60f2bbc52310015b5c
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon May 4 17:21:58 2020 -0400
+
+    gametest bug fixed
+
+commit 8dad9eded2ba2744544f9e4eabd39737d922b9cb
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon May 4 16:26:03 2020 -0400
+
+    output message difference fixed
+
+commit 1a0aba8d684d92a22ca9c6ceb6d525c7f0fe06fa
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon May 4 16:13:14 2020 -0400
+
+    make errors fixed
+
+commit dd13c71cf19494a46b1935d9575d9123d3c02f1e
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon May 4 15:06:18 2020 -0400
+
+    comments added in textui.cpp
+
+commit a6bb07426379d86579447515cd08c6d0b0426d0a
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon May 4 14:55:39 2020 -0400
+
+    Makefile implemented to test
+
+commit 2b26ba9bda2f666c50cab835db811ebdf741d817
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Mon May 4 14:39:33 2020 -0400
+
+    gitlog.txt added
+
 commit 7f47b2a427d129272fd4ce45334a7ef960f8b7fb
 Merge: 4b093d0 821b19c
 Author: Jingyu <jhuan146@jhu.edu>

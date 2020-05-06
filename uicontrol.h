@@ -1,3 +1,10 @@
+//Brhea D'Mello
+//bdmello2
+//Jingyu Huang
+//jhuan146
+//Wilson Tjoeng
+//wtjoeng1
+
 #ifndef UICONTROL_H
 #define UICONTROL_H
 
