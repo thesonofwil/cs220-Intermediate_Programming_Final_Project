@@ -30,7 +30,7 @@ bool BasicGameRules::allowMove(Game *game, Entity *actor, const Position &source
   }
 
   // Check if actor can move to dest tile.
-  return checkObjCanBePushed(game, actor, dest);
+  return checkObjCanBePushed(game, actor, source, dest);
 }
 
 // Update the positions of the entity and the inanimate object if pushed
@@ -125,28 +125,33 @@ Position BasicGameRules::getPushPosition(Game *game, Direction dir, Entity *obj)
   return newPos; 
 }
 
-bool BasicGameRules::checkObjCanBePushed(Game *game, Entity *actor, const Position &dest) const {
+bool BasicGameRules::checkObjCanBePushed(Game *game, Entity *actor, const Position &source, const Position &dest) const {
    Maze *maze = game->getMaze();
    const Tile *tile = maze->getTile(dest);
    MoveResult result = tile->checkMoveOnto(actor, source, dest);
    Entity *object = game->getEntityAt(dest);
 
-   if ((object == nullptr && result == MoveResult::ALLOW) || (actor->hasProperty('m') && object->hasProperty('h')) || (actor->hasProperty('h') && object->hasProperty('m')) { // No entity at destination tile or it's hero and minotaur 
-    return true;
-  } else if (object->hasProperty('v')) { // v denotes moveable entity
+   if (object == nullptr && result == MoveResult::ALLOW) { // Empty adjacent tile
+     return true;
+   } else if (object == nullptr && result == MoveResult::BLOCK) {
+     return false;
 
-    // Check if moveable object can be moved further
-    Direction dir = getPushDirection(actor, object);
-    if (dir == Direction::NONE) {
-      return false;
-    }
+   } else if ((actor->hasProperty('m') && object->hasProperty('h')) || (actor->hasProperty('h') && object->hasProperty('m'))) { // Hero and minotaur
+     return true;
+
+   } else if (object->hasProperty('v')) { // v denotes moveable entity
+     // Check if moveable object can be moved further
+     Direction dir = getPushDirection(actor, object);
+     if (dir == Direction::NONE) {
+       return false;
+     }
     
-    Position pushPos = getPushPosition(game, dir, object);
-   
-    if (pushPos == object->getPosition()) { // Object cannot be pushed
-      return false;
-    }
-    return true;
-  }
-  return true; // Default: there is no object
+     Position pushPos = getPushPosition(game, dir, object);
+     
+     if (pushPos == object->getPosition()) { // Object cannot be pushed
+       return false;
+     }
+     return true;
+   }
+   return true; // Default: there is no object
 }
