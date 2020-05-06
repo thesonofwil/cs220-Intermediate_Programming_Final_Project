@@ -22,7 +22,7 @@ private:
   // add your own private member functions...
   virtual Direction getPushDirection(Entity *actor, Entity *obj) const;
   virtual Position getPushPosition(Game *game, Direction dir, Entity *obj) const;
-  virtual bool checkObjCanBePushed(Game *game, Entity *actor, const Position &dest) const;
+  virtual bool checkObjCanBePushed(Game *game, Entity *actor, const Position &source, const Position &dest) const;
 };
 
 #endif // BASICGAMERULES_H
