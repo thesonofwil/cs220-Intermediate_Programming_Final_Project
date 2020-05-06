@@ -25,18 +25,12 @@ bool BasicGameRules::allowMove(Game *game, Entity *actor, const Position &source
 
   // Return false if inanimate object, move would be > 1 space, or if dest contains a moveable object
   // that can't move further
-  if (actor->hasProperty('v') || source.distanceFrom(dest) > 1 || !checkObjCanBePushed(game, actor, dest)) {
+  if (source.distanceFrom(dest) > 1) { 
     return false;           
   }
+
   // Check if actor can move to dest tile.
-  Maze *maze = game->getMaze();
-  const Tile *tile = maze->getTile(dest); 
-  MoveResult result = tile->checkMoveOnto(actor, source, dest);
-  if (result == MoveResult::ALLOW) {
-    return true;
-  }
-  
-  return false;
+  return checkObjCanBePushed(game, actor, dest);
 }
 
 // Update the positions of the entity and the inanimate object if pushed
@@ -132,8 +126,12 @@ Position BasicGameRules::getPushPosition(Game *game, Direction dir, Entity *obj)
 }
 
 bool BasicGameRules::checkObjCanBePushed(Game *game, Entity *actor, const Position &dest) const {
-  Entity *object = game->getEntityAt(dest);
-  if (object == nullptr) { // No entity at destination tile
+   Maze *maze = game->getMaze();
+   const Tile *tile = maze->getTile(dest);
+   MoveResult result = tile->checkMoveOnto(actor, source, dest);
+   Entity *object = game->getEntityAt(dest);
+
+   if ((object == nullptr && result == MoveResult::ALLOW) || (actor->hasProperty('m') && object->hasProperty('h')) || (actor->hasProperty('h') && object->hasProperty('m')) { // No entity at destination tile or it's hero and minotaur 
     return true;
   } else if (object->hasProperty('v')) { // v denotes moveable entity
 
