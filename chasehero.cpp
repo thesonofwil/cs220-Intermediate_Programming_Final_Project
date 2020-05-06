@@ -1,5 +1,9 @@
+//Brhea D'Mello
+//bdmello2
 //Jingyu Huang
 //jhuan146
+//Wilson Tjoeng
+//wtjoeng1
 
 #include "chasehero.h"
 #include "position.h"

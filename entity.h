@@ -1,3 +1,10 @@
+//Brhea D'Mello                                                                                                                  
+//bdmello2                                                                                                                       
+//Jingyu Huang                                                                                                                  
+//jhuan146                                                                                                                       
+//Wilson Tjoeng                                                                                                                  
+//wtjoeng1 
+
 #ifndef ENTITY_H
 #define ENTITY_H
 
