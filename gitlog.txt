@@ -1,3 +1,21 @@
+commit 0d6ba136205507148d03eb4b33463d617ed787fe
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed May 6 19:40:38 2020 -0400
+
+    program descriptions and brief contribution added in README
+
+commit 2ee0368231863b86944cb13ce1ea98eedb748e6a
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed May 6 19:26:30 2020 -0400
+
+    names and jheds added at front
+
+commit 0355369e77b23620b859aa47d73709a2721360e6
+Author: Jingyu <jhuan146@jhu.edu>
+Date:   Wed May 6 19:12:59 2020 -0400
+
+    gitlog.txt updated
+
 commit 702b2277dd0059cb1261543015b180757ed13fe1
 Author: Wilson Tjoeng <wtjoeng1@jhu.edu>
 Date:   Tue May 5 22:59:55 2020 -0400
