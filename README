@@ -11,11 +11,11 @@ This entire program allows a hero-minotaur game to be played between users and t
 
 Main contribution:
 
-Brhea mainly implemented AStarChaseHero, Entity with Wilson, and Wall.
+Brhea mainly implemented AStarChaseHero, Entity, and Wall.
 
 Jingyu mainly implemented ChaseHero, Goal, UIControl, and TextUI.
 
-Wilson mainly implemented BasicGameRules, Floor, Game, Inanimate, Entity with Brhea, and Maze.
+Wilson mainly implemented BasicGameRules, Floor, Game, Inanimate, and Maze.
 
 
 Further details of the collaboration is provided in individual discriptions.
