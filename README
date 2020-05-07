@@ -1,11 +1,13 @@
-//Brhea D'Mello
-//bdmello2
-//Jingyu Huang
-//jhuan146
-//Wilson Tjoeng
-//wtjoeng1
+Brhea D'Mello - bdmello2
+Jingyu Huang - jhuan146
+Wilson Tjoeng - wtjoeng1
+
 
 This entire program allows a hero-minotaur game to be played between users and the system. The source files are clear with makefile errors and allow a regular game to be played. The AStarChaseHero is not fully implemented to function correctly and pass all tests. Other parts of the programs should function for the game to be run, though they may not pass all tests.
 
-Main contribution: Brhea mainly implemented AStarChaseHero, Entity and Wall; Jingyu mainly implemented ChaseHero, Goal, UIControl and TextUI; Wilson mainly implemented BasicGameRules, Floor, Game, Inanimate and Maze. Further details of the collaboration is provided in individual discriptions.
+###Main contribution:
+Brhea mainly implemented AStarChaseHero, Entity, and Wall.
+Jingyu mainly implemented ChaseHero, Goal, UIControl, and TextUI.
+Wilson mainly implemented BasicGameRules, Floor, Game, Inanimate, and Maze.
 
+Further details of the collaboration is provided in individual discriptions.
