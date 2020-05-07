@@ -87,8 +87,19 @@ Maze* Maze::read(std::istream &in) {
   
   TileFactory *tileFactory = TileFactory::getInstance(); // Get instance to call its member function
   char ch;
+  in.get(ch); // The '\n' after the dimensions is ignored
   int count = 0; // Keep track of number of tiles read
-  while (in >> ch) {
+  int widthCount = 0; // Keep track if widthCount matches given width
+  while (in.get(ch)) {
+    if (ch == '\n') {
+      if (widthCount != width) {
+	std::cerr << "Error 2: invalid dimensions" << std::endl;
+	return nullptr;
+      }
+      widthCount = 0;
+      continue;
+    }
+
     Tile *tile = tileFactory->TileFactory::createFromChar(ch); // Get tile
 
     if ((tile == nullptr)) { // Invalid tile either in maze or outside (e.g. entity descriptor)
@@ -108,6 +119,7 @@ Maze* Maze::read(std::istream &in) {
     // Populate the empty maze
     maze->maze->at(count) = tile;
     count++;
+    widthCount++;
   }
   
   if (count != width * height) { // Maze dimensions were incorrect
